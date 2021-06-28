@@ -1,0 +1,16 @@
+C:\Users\ASUS\source\repos\CURS\CURS.Infrastructure.Data\obj\Debug\netcoreapp3.1\CURS.Infrastructure.Data.csproj.AssemblyReference.cache
+C:\Users\ASUS\source\repos\CURS\CURS.Infrastructure.Data\obj\Debug\netcoreapp3.1\CURS.Infrastructure.Data.AssemblyInfoInputs.cache
+C:\Users\ASUS\source\repos\CURS\CURS.Infrastructure.Data\obj\Debug\netcoreapp3.1\CURS.Infrastructure.Data.AssemblyInfo.cs
+C:\Users\ASUS\source\repos\CURS\CURS.Infrastructure.Data\obj\Debug\netcoreapp3.1\CURS.Infrastructure.Data.csproj.CoreCompileInputs.cache
+C:\Users\ASUS\source\repos\CURS\CURS.Infrastructure.Data\bin\Debug\netcoreapp3.1\CURS.Infrastructure.Data.deps.json
+C:\Users\ASUS\source\repos\CURS\CURS.Infrastructure.Data\bin\Debug\netcoreapp3.1\CURS.Infrastructure.Data.dll
+C:\Users\ASUS\source\repos\CURS\CURS.Infrastructure.Data\bin\Debug\netcoreapp3.1\CURS.Infrastructure.Data.pdb
+C:\Users\ASUS\source\repos\CURS\CURS.Infrastructure.Data\bin\Debug\netcoreapp3.1\CURS.Domain.Core.dll
+C:\Users\ASUS\source\repos\CURS\CURS.Infrastructure.Data\bin\Debug\netcoreapp3.1\CURS.Domain.Interfaces.Data.dll
+C:\Users\ASUS\source\repos\CURS\CURS.Infrastructure.Data\bin\Debug\netcoreapp3.1\CURS.Domain.Core.pdb
+C:\Users\ASUS\source\repos\CURS\CURS.Infrastructure.Data\bin\Debug\netcoreapp3.1\CURS.Domain.Interfaces.Data.pdb
+C:\Users\ASUS\source\repos\CURS\CURS.Infrastructure.Data\obj\Debug\netcoreapp3.1\CURS.Infrastructure.Data.csproj.CopyComplete
+C:\Users\ASUS\source\repos\CURS\CURS.Infrastructure.Data\obj\Debug\netcoreapp3.1\CURS.Infrastructure.Data.dll
+C:\Users\ASUS\source\repos\CURS\CURS.Infrastructure.Data\obj\Debug\netcoreapp3.1\CURS.Infrastructure.Data.pdb
+C:\Users\ASUS\source\repos\CURS\CURS.Infrastructure.Data\bin\Debug\netcoreapp3.1\CURS.Domain.Dtos.dll
+C:\Users\ASUS\source\repos\CURS\CURS.Infrastructure.Data\bin\Debug\netcoreapp3.1\CURS.Domain.Dtos.pdb

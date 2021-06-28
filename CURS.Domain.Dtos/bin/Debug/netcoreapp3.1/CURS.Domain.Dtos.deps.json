@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v3.1",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v3.1": {
+      "CURS.Domain.Dtos/1.0.0": {
+        "dependencies": {
+          "CURS.Domain.Core": "1.0.0"
+        },
+        "runtime": {
+          "CURS.Domain.Dtos.dll": {}
+        }
+      },
+      "CURS.Domain.Core/1.0.0": {
+        "runtime": {
+          "CURS.Domain.Core.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "CURS.Domain.Dtos/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "CURS.Domain.Core/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
