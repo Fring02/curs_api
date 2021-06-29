@@ -1,16 +1,18 @@
-﻿using System;
+﻿using CURS.Domain.Dtos;
+using CURS.Domain.Interfaces.Core;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace CURS.Domain.Interfaces.Data
 {
-    public interface IRepository<T> where T : class
+    public interface IRepository<TEntity> where TEntity : IEntity
     {
-        Task CreateAsync(T model);
-        Task UpdateAsync(T model);
-        Task DeleteAsync(T model);
-        Task<IReadOnlyCollection<T>> GetAllAsync();
-        Task<T> GetByIdAsync<TId>(TId id);
+        Task CreateAsync(TEntity model);
+        Task UpdateAsync(TEntity model);
+        Task DeleteAsync(TEntity model);
+        Task<IReadOnlyCollection<TEntityDto>> GetAllAsync<TEntityDto>() where TEntityDto : IDto;
+        Task<TEntity> GetByIdAsync<TId>(TId id);
     }
 }

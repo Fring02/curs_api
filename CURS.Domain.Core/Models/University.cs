@@ -1,10 +1,11 @@
-﻿using System;
+﻿using CURS.Domain.Interfaces.Core;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace CURS.Domain.Core.Models
 {
-    public class University
+    public class University : IEntity
     {
         public DateTime DateModified { get; set; }
         public DateTime DateOfCreation { get; set; }

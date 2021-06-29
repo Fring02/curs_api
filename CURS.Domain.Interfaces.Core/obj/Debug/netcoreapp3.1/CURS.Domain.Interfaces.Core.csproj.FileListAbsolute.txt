@@ -1,0 +1,9 @@
+C:\Users\ASUS\source\repos\CURS\CURS.Domain.Interfaces.Core\bin\Debug\netcoreapp3.1\CURS.Domain.Interfaces.Core.deps.json
+C:\Users\ASUS\source\repos\CURS\CURS.Domain.Interfaces.Core\bin\Debug\netcoreapp3.1\CURS.Domain.Interfaces.Core.dll
+C:\Users\ASUS\source\repos\CURS\CURS.Domain.Interfaces.Core\bin\Debug\netcoreapp3.1\CURS.Domain.Interfaces.Core.pdb
+C:\Users\ASUS\source\repos\CURS\CURS.Domain.Interfaces.Core\obj\Debug\netcoreapp3.1\CURS.Domain.Interfaces.Core.csproj.AssemblyReference.cache
+C:\Users\ASUS\source\repos\CURS\CURS.Domain.Interfaces.Core\obj\Debug\netcoreapp3.1\CURS.Domain.Interfaces.Core.AssemblyInfoInputs.cache
+C:\Users\ASUS\source\repos\CURS\CURS.Domain.Interfaces.Core\obj\Debug\netcoreapp3.1\CURS.Domain.Interfaces.Core.AssemblyInfo.cs
+C:\Users\ASUS\source\repos\CURS\CURS.Domain.Interfaces.Core\obj\Debug\netcoreapp3.1\CURS.Domain.Interfaces.Core.csproj.CoreCompileInputs.cache
+C:\Users\ASUS\source\repos\CURS\CURS.Domain.Interfaces.Core\obj\Debug\netcoreapp3.1\CURS.Domain.Interfaces.Core.dll
+C:\Users\ASUS\source\repos\CURS\CURS.Domain.Interfaces.Core\obj\Debug\netcoreapp3.1\CURS.Domain.Interfaces.Core.pdb

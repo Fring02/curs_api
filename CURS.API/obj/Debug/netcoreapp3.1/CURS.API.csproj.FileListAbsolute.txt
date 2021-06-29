@@ -41,6 +41,12 @@ C:\Users\ASUS\source\repos\CURS\CURS.API\obj\Debug\netcoreapp3.1\CURS.API.csproj
 C:\Users\ASUS\source\repos\CURS\CURS.API\obj\Debug\netcoreapp3.1\CURS.API.dll
 C:\Users\ASUS\source\repos\CURS\CURS.API\obj\Debug\netcoreapp3.1\CURS.API.pdb
 C:\Users\ASUS\source\repos\CURS\CURS.API\obj\Debug\netcoreapp3.1\CURS.API.genruntimeconfig.cache
-C:\Users\ASUS\source\repos\CURS\CURS.API\bin\Debug\netcoreapp3.1\MongoDB.Entities.dll
 C:\Users\ASUS\source\repos\CURS\CURS.API\bin\Debug\netcoreapp3.1\CURS.Domain.Dtos.dll
 C:\Users\ASUS\source\repos\CURS\CURS.API\bin\Debug\netcoreapp3.1\CURS.Domain.Dtos.pdb
+C:\Users\ASUS\source\repos\CURS\CURS.API\bin\Debug\netcoreapp3.1\CURS.Domain.Interfaces.Core.dll
+C:\Users\ASUS\source\repos\CURS\CURS.API\bin\Debug\netcoreapp3.1\CURS.Domain.Interfaces.Core.pdb
+C:\Users\ASUS\source\repos\CURS\CURS.API\bin\Debug\netcoreapp3.1\Microsoft.OpenApi.dll
+C:\Users\ASUS\source\repos\CURS\CURS.API\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\ASUS\source\repos\CURS\CURS.API\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\ASUS\source\repos\CURS\CURS.API\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\ASUS\source\repos\CURS\CURS.API\obj\Debug\netcoreapp3.1\CURS.API.MvcApplicationPartsAssemblyInfo.cs

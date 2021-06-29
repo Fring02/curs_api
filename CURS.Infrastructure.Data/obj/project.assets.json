@@ -11,15 +11,6 @@
           "lib/netstandard2.1/DnsClient.dll": {}
         }
       },
-      "Microsoft.CSharp/4.7.0": {
-        "type": "package",
-        "compile": {
-          "ref/netcoreapp2.0/_._": {}
-        },
-        "runtime": {
-          "lib/netcoreapp2.0/_._": {}
-        }
-      },
       "Microsoft.Extensions.DependencyInjection.Abstractions/5.0.0": {
         "type": "package",
         "compile": {
@@ -126,19 +117,6 @@
           }
         }
       },
-      "MongoDB.Entities/20.15.0": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.CSharp": "4.7.0",
-          "MongoDB.Driver": "2.12.4"
-        },
-        "compile": {
-          "lib/netstandard2.0/MongoDB.Entities.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard2.0/MongoDB.Entities.dll": {}
-        }
-      },
       "MongoDB.Libmongocrypt/1.2.1": {
         "type": "package",
         "compile": {
@@ -224,6 +202,9 @@
       "CURS.Domain.Core/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v3.1",
+        "dependencies": {
+          "CURS.Domain.Interfaces.Core": "1.0.0"
+        },
         "compile": {
           "bin/placeholder/CURS.Domain.Core.dll": {}
         },
@@ -244,11 +225,23 @@
           "bin/placeholder/CURS.Domain.Dtos.dll": {}
         }
       },
+      "CURS.Domain.Interfaces.Core/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "compile": {
+          "bin/placeholder/CURS.Domain.Interfaces.Core.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CURS.Domain.Interfaces.Core.dll": {}
+        }
+      },
       "CURS.Domain.Interfaces.Data/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v3.1",
         "dependencies": {
-          "CURS.Domain.Core": "1.0.0"
+          "CURS.Domain.Core": "1.0.0",
+          "CURS.Domain.Dtos": "1.0.0",
+          "CURS.Domain.Interfaces.Core": "1.0.0"
         },
         "compile": {
           "bin/placeholder/CURS.Domain.Interfaces.Data.dll": {}
@@ -280,75 +273,6 @@
         "lib/netstandard2.0/DnsClient.xml",
         "lib/netstandard2.1/DnsClient.dll",
         "lib/netstandard2.1/DnsClient.xml"
-      ]
-    },
-    "Microsoft.CSharp/4.7.0": {
-      "sha512": "pTj+D3uJWyN3My70i2Hqo+OXixq3Os2D1nJ2x92FFo6sk8fYS1m1WLNTs0Dc1uPaViH0YvEEwvzddQ7y4rhXmA==",
-      "type": "package",
-      "path": "microsoft.csharp/4.7.0",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "LICENSE.TXT",
-        "THIRD-PARTY-NOTICES.TXT",
-        "lib/MonoAndroid10/_._",
-        "lib/MonoTouch10/_._",
-        "lib/net45/_._",
-        "lib/netcore50/Microsoft.CSharp.dll",
-        "lib/netcoreapp2.0/_._",
-        "lib/netstandard1.3/Microsoft.CSharp.dll",
-        "lib/netstandard2.0/Microsoft.CSharp.dll",
-        "lib/netstandard2.0/Microsoft.CSharp.xml",
-        "lib/portable-net45+win8+wp8+wpa81/_._",
-        "lib/uap10.0.16299/_._",
-        "lib/win8/_._",
-        "lib/wp80/_._",
-        "lib/wpa81/_._",
-        "lib/xamarinios10/_._",
-        "lib/xamarinmac20/_._",
-        "lib/xamarintvos10/_._",
-        "lib/xamarinwatchos10/_._",
-        "microsoft.csharp.4.7.0.nupkg.sha512",
-        "microsoft.csharp.nuspec",
-        "ref/MonoAndroid10/_._",
-        "ref/MonoTouch10/_._",
-        "ref/net45/_._",
-        "ref/netcore50/Microsoft.CSharp.dll",
-        "ref/netcore50/Microsoft.CSharp.xml",
-        "ref/netcore50/de/Microsoft.CSharp.xml",
-        "ref/netcore50/es/Microsoft.CSharp.xml",
-        "ref/netcore50/fr/Microsoft.CSharp.xml",
-        "ref/netcore50/it/Microsoft.CSharp.xml",
-        "ref/netcore50/ja/Microsoft.CSharp.xml",
-        "ref/netcore50/ko/Microsoft.CSharp.xml",
-        "ref/netcore50/ru/Microsoft.CSharp.xml",
-        "ref/netcore50/zh-hans/Microsoft.CSharp.xml",
-        "ref/netcore50/zh-hant/Microsoft.CSharp.xml",
-        "ref/netcoreapp2.0/_._",
-        "ref/netstandard1.0/Microsoft.CSharp.dll",
-        "ref/netstandard1.0/Microsoft.CSharp.xml",
-        "ref/netstandard1.0/de/Microsoft.CSharp.xml",
-        "ref/netstandard1.0/es/Microsoft.CSharp.xml",
-        "ref/netstandard1.0/fr/Microsoft.CSharp.xml",
-        "ref/netstandard1.0/it/Microsoft.CSharp.xml",
-        "ref/netstandard1.0/ja/Microsoft.CSharp.xml",
-        "ref/netstandard1.0/ko/Microsoft.CSharp.xml",
-        "ref/netstandard1.0/ru/Microsoft.CSharp.xml",
-        "ref/netstandard1.0/zh-hans/Microsoft.CSharp.xml",
-        "ref/netstandard1.0/zh-hant/Microsoft.CSharp.xml",
-        "ref/netstandard2.0/Microsoft.CSharp.dll",
-        "ref/netstandard2.0/Microsoft.CSharp.xml",
-        "ref/portable-net45+win8+wp8+wpa81/_._",
-        "ref/uap10.0.16299/_._",
-        "ref/win8/_._",
-        "ref/wp80/_._",
-        "ref/wpa81/_._",
-        "ref/xamarinios10/_._",
-        "ref/xamarinmac20/_._",
-        "ref/xamarintvos10/_._",
-        "ref/xamarinwatchos10/_._",
-        "useSharedDesignerContext.txt",
-        "version.txt"
       ]
     },
     "Microsoft.Extensions.DependencyInjection.Abstractions/5.0.0": {
@@ -515,21 +439,6 @@
         "runtimes/win/native/snappy64.dll"
       ]
     },
-    "MongoDB.Entities/20.15.0": {
-      "sha512": "yCDJ3q/4X6X6yJVXX9tiIwxMUl9r3sN0vTla1/HRG6C/6xlae4ZxFQWIl+7FCUOjDRz+Y5B7RqWe0LpvIZHUIA==",
-      "type": "package",
-      "path": "mongodb.entities/20.15.0",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "LICENSE",
-        "icon.png",
-        "lib/netstandard2.0/MongoDB.Entities.dll",
-        "lib/netstandard2.0/MongoDB.Entities.xml",
-        "mongodb.entities.20.15.0.nupkg.sha512",
-        "mongodb.entities.nuspec"
-      ]
-    },
     "MongoDB.Libmongocrypt/1.2.1": {
       "sha512": "VUtUAO2W6+DOjBtLHuD9WlTTcxYLXCNfp9YeKcws5LNAl0xej2KX1I37VsTAKnmnMjAF2Vwy1FXLCpK84FglMA==",
       "type": "package",
@@ -689,6 +598,11 @@
       "path": "../CURS.Domain.Dtos/CURS.Domain.Dtos.csproj",
       "msbuildProject": "../CURS.Domain.Dtos/CURS.Domain.Dtos.csproj"
     },
+    "CURS.Domain.Interfaces.Core/1.0.0": {
+      "type": "project",
+      "path": "../CURS.Domain.Interfaces.Core/CURS.Domain.Interfaces.Core.csproj",
+      "msbuildProject": "../CURS.Domain.Interfaces.Core/CURS.Domain.Interfaces.Core.csproj"
+    },
     "CURS.Domain.Interfaces.Data/1.0.0": {
       "type": "project",
       "path": "../CURS.Domain.Interfaces.Data/CURS.Domain.Interfaces.Data.csproj",
@@ -701,8 +615,7 @@
       "CURS.Domain.Dtos >= 1.0.0",
       "CURS.Domain.Interfaces.Data >= 1.0.0",
       "Microsoft.Extensions.Options >= 5.0.0",
-      "MongoDB.Driver >= 2.12.4",
-      "MongoDB.Entities >= 20.15.0"
+      "MongoDB.Driver >= 2.12.4"
     ]
   },
   "packageFolders": {
@@ -765,10 +678,6 @@
           "MongoDB.Driver": {
             "target": "Package",
             "version": "[2.12.4, )"
-          },
-          "MongoDB.Entities": {
-            "target": "Package",
-            "version": "[20.15.0, )"
           }
         },
         "imports": [

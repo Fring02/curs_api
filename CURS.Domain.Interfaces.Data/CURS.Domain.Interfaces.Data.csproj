@@ -6,6 +6,8 @@
 
   <ItemGroup>
     <ProjectReference Include="..\CURS.Domain.Core\CURS.Domain.Core.csproj" />
+    <ProjectReference Include="..\CURS.Domain.Dtos\CURS.Domain.Dtos.csproj" />
+    <ProjectReference Include="..\CURS.Domain.Interfaces.Core\CURS.Domain.Interfaces.Core.csproj" />
   </ItemGroup>
 
 </Project>

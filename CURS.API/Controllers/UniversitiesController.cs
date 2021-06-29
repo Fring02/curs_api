@@ -1,10 +1,6 @@
 ﻿using CURS.Domain.Dtos;
 using CURS.Domain.Interfaces.Data;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace CURS.API.Controllers
@@ -13,18 +9,18 @@ namespace CURS.API.Controllers
     [ApiController]
     public class UniversitiesController : ControllerBase
     {
-        private IUniversitiesRepository<UniversityViewDto> _repos;
+        private IUniversitiesRepository _repos;
 
-        public UniversitiesController(IUniversitiesRepository<UniversityViewDto> repos)
+        public UniversitiesController(IUniversitiesRepository repos)
         {
             _repos = repos;
         }
 
         [HttpGet]
-        public async Task<IActionResult> GetUniversities(string name)
+        public async Task<IActionResult> GetUniversities([FromQuery] UniversityFilterDto filter)
         {
-            if (string.IsNullOrEmpty(name)) return BadRequest();
-            var universities = await _repos.GetByFilter(name);
+            if (filter == null) return BadRequest();
+            var universities = await _repos.GetByFilter(filter);
             return Ok(universities);
         }
     }

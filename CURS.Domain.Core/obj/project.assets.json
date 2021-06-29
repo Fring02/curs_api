@@ -1,11 +1,30 @@
 {
   "version": 3,
   "targets": {
-    ".NETCoreApp,Version=v3.1": {}
+    ".NETCoreApp,Version=v3.1": {
+      "CURS.Domain.Interfaces.Core/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "compile": {
+          "bin/placeholder/CURS.Domain.Interfaces.Core.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CURS.Domain.Interfaces.Core.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "CURS.Domain.Interfaces.Core/1.0.0": {
+      "type": "project",
+      "path": "../CURS.Domain.Interfaces.Core/CURS.Domain.Interfaces.Core.csproj",
+      "msbuildProject": "../CURS.Domain.Interfaces.Core/CURS.Domain.Interfaces.Core.csproj"
+    }
+  },
   "projectFileDependencyGroups": {
-    ".NETCoreApp,Version=v3.1": []
+    ".NETCoreApp,Version=v3.1": [
+      "CURS.Domain.Interfaces.Core >= 1.0.0"
+    ]
   },
   "packageFolders": {
     "C:\\Users\\ASUS\\.nuget\\packages\\": {},
@@ -37,7 +56,11 @@
       "frameworks": {
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\ASUS\\source\\repos\\CURS\\CURS.Domain.Interfaces.Core\\CURS.Domain.Interfaces.Core.csproj": {
+              "projectPath": "C:\\Users\\ASUS\\source\\repos\\CURS\\CURS.Domain.Interfaces.Core\\CURS.Domain.Interfaces.Core.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

@@ -10,3 +10,5 @@ C:\Users\ASUS\source\repos\CURS\CURS.Domain.Dtos\obj\Debug\netcoreapp3.1\CURS.Do
 C:\Users\ASUS\source\repos\CURS\CURS.Domain.Dtos\obj\Debug\netcoreapp3.1\CURS.Domain.Dtos.csproj.CopyComplete
 C:\Users\ASUS\source\repos\CURS\CURS.Domain.Dtos\obj\Debug\netcoreapp3.1\CURS.Domain.Dtos.dll
 C:\Users\ASUS\source\repos\CURS\CURS.Domain.Dtos\obj\Debug\netcoreapp3.1\CURS.Domain.Dtos.pdb
+C:\Users\ASUS\source\repos\CURS\CURS.Domain.Dtos\bin\Debug\netcoreapp3.1\CURS.Domain.Interfaces.Core.dll
+C:\Users\ASUS\source\repos\CURS\CURS.Domain.Dtos\bin\Debug\netcoreapp3.1\CURS.Domain.Interfaces.Core.pdb

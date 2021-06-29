@@ -14,3 +14,5 @@ C:\Users\ASUS\source\repos\CURS\CURS.Infrastructure.Data\obj\Debug\netcoreapp3.1
 C:\Users\ASUS\source\repos\CURS\CURS.Infrastructure.Data\obj\Debug\netcoreapp3.1\CURS.Infrastructure.Data.pdb
 C:\Users\ASUS\source\repos\CURS\CURS.Infrastructure.Data\bin\Debug\netcoreapp3.1\CURS.Domain.Dtos.dll
 C:\Users\ASUS\source\repos\CURS\CURS.Infrastructure.Data\bin\Debug\netcoreapp3.1\CURS.Domain.Dtos.pdb
+C:\Users\ASUS\source\repos\CURS\CURS.Infrastructure.Data\bin\Debug\netcoreapp3.1\CURS.Domain.Interfaces.Core.dll
+C:\Users\ASUS\source\repos\CURS\CURS.Infrastructure.Data\bin\Debug\netcoreapp3.1\CURS.Domain.Interfaces.Core.pdb

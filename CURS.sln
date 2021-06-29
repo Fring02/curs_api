@@ -3,15 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31410.357
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CURS.API", "CURS.API\CURS.API.csproj", "{A7B92937-03D3-4D7A-AA46-5F1CF75DE84E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CURS.API", "CURS.API\CURS.API.csproj", "{A7B92937-03D3-4D7A-AA46-5F1CF75DE84E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CURS.Domain.Core", "CURS.Domain.Core\CURS.Domain.Core.csproj", "{BF86EDC9-E8A6-4990-8A20-3BB1CBC7A2DF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CURS.Domain.Core", "CURS.Domain.Core\CURS.Domain.Core.csproj", "{BF86EDC9-E8A6-4990-8A20-3BB1CBC7A2DF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CURS.Infrastructure.Data", "CURS.Infrastructure.Data\CURS.Infrastructure.Data.csproj", "{859D5B53-6220-4709-86D1-D7575C6593DD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CURS.Infrastructure.Data", "CURS.Infrastructure.Data\CURS.Infrastructure.Data.csproj", "{859D5B53-6220-4709-86D1-D7575C6593DD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CURS.Domain.Interfaces.Data", "CURS.Domain.Interfaces.Data\CURS.Domain.Interfaces.Data.csproj", "{5C9BC168-41FC-48F4-BFDE-851D4A658915}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CURS.Domain.Interfaces.Data", "CURS.Domain.Interfaces.Data\CURS.Domain.Interfaces.Data.csproj", "{5C9BC168-41FC-48F4-BFDE-851D4A658915}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CURS.Domain.Dtos", "CURS.Domain.Dtos\CURS.Domain.Dtos.csproj", "{207025E0-E1B8-4524-A77F-336546F79EC3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CURS.Domain.Dtos", "CURS.Domain.Dtos\CURS.Domain.Dtos.csproj", "{207025E0-E1B8-4524-A77F-336546F79EC3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CURS.Domain.Interfaces.Core", "CURS.Domain.Interfaces.Core\CURS.Domain.Interfaces.Core.csproj", "{EBB77761-70F7-4409-AE37-5A12348FB6A6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{207025E0-E1B8-4524-A77F-336546F79EC3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{207025E0-E1B8-4524-A77F-336546F79EC3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{207025E0-E1B8-4524-A77F-336546F79EC3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EBB77761-70F7-4409-AE37-5A12348FB6A6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EBB77761-70F7-4409-AE37-5A12348FB6A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EBB77761-70F7-4409-AE37-5A12348FB6A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EBB77761-70F7-4409-AE37-5A12348FB6A6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

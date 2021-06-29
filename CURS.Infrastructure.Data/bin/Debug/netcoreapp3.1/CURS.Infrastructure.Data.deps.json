@@ -12,8 +12,7 @@
           "CURS.Domain.Dtos": "1.0.0",
           "CURS.Domain.Interfaces.Data": "1.0.0",
           "Microsoft.Extensions.Options": "5.0.0",
-          "MongoDB.Driver": "2.12.4",
-          "MongoDB.Entities": "20.15.0"
+          "MongoDB.Driver": "2.12.4"
         },
         "runtime": {
           "CURS.Infrastructure.Data.dll": {}
@@ -27,7 +26,6 @@
           }
         }
       },
-      "Microsoft.CSharp/4.7.0": {},
       "Microsoft.Extensions.DependencyInjection.Abstractions/5.0.0": {
         "runtime": {
           "lib/netstandard2.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll": {
@@ -113,18 +111,6 @@
           }
         }
       },
-      "MongoDB.Entities/20.15.0": {
-        "dependencies": {
-          "Microsoft.CSharp": "4.7.0",
-          "MongoDB.Driver": "2.12.4"
-        },
-        "runtime": {
-          "lib/netstandard2.0/MongoDB.Entities.dll": {
-            "assemblyVersion": "20.15.0.0",
-            "fileVersion": "20.15.0.0"
-          }
-        }
-      },
       "MongoDB.Libmongocrypt/1.2.1": {
         "runtime": {
           "lib/netstandard2.1/MongoDB.Libmongocrypt.dll": {
@@ -177,6 +163,9 @@
         }
       },
       "CURS.Domain.Core/1.0.0": {
+        "dependencies": {
+          "CURS.Domain.Interfaces.Core": "1.0.0"
+        },
         "runtime": {
           "CURS.Domain.Core.dll": {}
         }
@@ -189,9 +178,16 @@
           "CURS.Domain.Dtos.dll": {}
         }
       },
+      "CURS.Domain.Interfaces.Core/1.0.0": {
+        "runtime": {
+          "CURS.Domain.Interfaces.Core.dll": {}
+        }
+      },
       "CURS.Domain.Interfaces.Data/1.0.0": {
         "dependencies": {
-          "CURS.Domain.Core": "1.0.0"
+          "CURS.Domain.Core": "1.0.0",
+          "CURS.Domain.Dtos": "1.0.0",
+          "CURS.Domain.Interfaces.Core": "1.0.0"
         },
         "runtime": {
           "CURS.Domain.Interfaces.Data.dll": {}
@@ -211,13 +207,6 @@
       "sha512": "sha512-CO1NG1zQdV0nEAXmr/KppLZ0S1qkaPwV0kPX5YPgmYBtrBVh1XMYHM54IXy3RBJu1k4thFtpzwo4HNHqxiuFYw==",
       "path": "dnsclient/1.4.0",
       "hashPath": "dnsclient.1.4.0.nupkg.sha512"
-    },
-    "Microsoft.CSharp/4.7.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-pTj+D3uJWyN3My70i2Hqo+OXixq3Os2D1nJ2x92FFo6sk8fYS1m1WLNTs0Dc1uPaViH0YvEEwvzddQ7y4rhXmA==",
-      "path": "microsoft.csharp/4.7.0",
-      "hashPath": "microsoft.csharp.4.7.0.nupkg.sha512"
     },
     "Microsoft.Extensions.DependencyInjection.Abstractions/5.0.0": {
       "type": "package",
@@ -268,13 +257,6 @@
       "path": "mongodb.driver.core/2.12.4",
       "hashPath": "mongodb.driver.core.2.12.4.nupkg.sha512"
     },
-    "MongoDB.Entities/20.15.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-yCDJ3q/4X6X6yJVXX9tiIwxMUl9r3sN0vTla1/HRG6C/6xlae4ZxFQWIl+7FCUOjDRz+Y5B7RqWe0LpvIZHUIA==",
-      "path": "mongodb.entities/20.15.0",
-      "hashPath": "mongodb.entities.20.15.0.nupkg.sha512"
-    },
     "MongoDB.Libmongocrypt/1.2.1": {
       "type": "package",
       "serviceable": true,
@@ -316,6 +298,11 @@
       "sha512": ""
     },
     "CURS.Domain.Dtos/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "CURS.Domain.Interfaces.Core/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

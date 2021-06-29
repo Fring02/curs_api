@@ -12,25 +12,58 @@ using System.Threading.Tasks;
 
 namespace CURS.Infrastructure.Data.Repositories
 {
-    public class UniversitiesRepository : IUniversitiesRepository<UniversityViewDto>
+    public class UniversitiesRepository : BaseRepository<University>, IUniversitiesRepository
     {
-        private MongoContext _context;
-
-        public UniversitiesRepository(MongoContext context)
+        public UniversitiesRepository(MongoContext context) : base(context)
         {
             _context = context;
         }
 
-        public async Task<IEnumerable<UniversityViewDto>> GetByFilter(string name)
+        public override Task CreateAsync(University model)
         {
-            var regex = new BsonRegularExpression(name);
-            var filter = Builders<UniversityDocument>.Filter.Or(new[]
+            throw new NotImplementedException();
+        }
+
+        public override Task DeleteAsync(University model)
+        {
+            throw new NotImplementedException();
+        }
+
+        public override Task<IReadOnlyCollection<TEntityDto>> GetAllAsync<TEntityDto>()
+        {
+            throw new NotImplementedException();
+        }
+
+        public async Task<IEnumerable<UniversityViewDto>> GetByFilter(UniversityFilterDto filter)
+        {
+            FilterDefinition<UniversityDocument> filterExpression = Builders<UniversityDocument>.Filter.Empty;
+            if (!string.IsNullOrEmpty(filter.Name))
             {
-                Builders<UniversityDocument>.Filter.Regex("Name.NameEn", regex),
-                Builders<UniversityDocument>.Filter.Regex("Name.NameKk", regex),
-                Builders<UniversityDocument>.Filter.Regex("Name.NameRu", regex),
-            });
-            return await _context.Universities.Find(filter).
+                var regex = new BsonRegularExpression(filter.Name);
+                filterExpression &= Builders<UniversityDocument>.Filter.Or(new[]
+                {
+                    Builders<UniversityDocument>.Filter.Regex("Name.NameEn", regex),
+                    Builders<UniversityDocument>.Filter.Regex("Name.NameKk", regex),
+                    Builders<UniversityDocument>.Filter.Regex("Name.NameRu", regex),
+                });
+            }
+            if(filter.ExtraId > 0)
+            {
+                filterExpression &= Builders<UniversityDocument>.Filter.Eq("ExtraId", filter.ExtraId);
+            }
+            if(filter.DateModified != default)
+            {
+                var tomorrow = filter.DateModified.AddDays(1);
+                filterExpression &= Builders<UniversityDocument>.Filter.Where(u =>
+                u.DateModified >= filter.DateModified && u.DateModified < tomorrow);
+            }
+            if(filter.DateOfCreation != default)
+            {
+                var tomorrow = filter.DateOfCreation.AddDays(1);
+                filterExpression &= Builders<UniversityDocument>.Filter.Where(u =>
+                u.DateOfCreation >= filter.DateOfCreation && u.DateOfCreation < tomorrow);
+            }
+            return await _context.Universities.Find(filterExpression).
                 Project(Builders<UniversityDocument>.Projection
                 .Expression(u => new UniversityViewDto
                 {
@@ -40,6 +73,16 @@ namespace CURS.Infrastructure.Data.Repositories
                     Name = u.Name,
                 })).
                 ToListAsync();
+        }
+
+        public override Task<University> GetByIdAsync<TId>(TId id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public override Task UpdateAsync(University model)
+        {
+            throw new NotImplementedException();
         }
     }
 }

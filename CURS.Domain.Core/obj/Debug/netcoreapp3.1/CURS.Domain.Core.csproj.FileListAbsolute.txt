@@ -7,3 +7,6 @@ C:\Users\ASUS\source\repos\CURS\CURS.Domain.Core\obj\Debug\netcoreapp3.1\CURS.Do
 C:\Users\ASUS\source\repos\CURS\CURS.Domain.Core\obj\Debug\netcoreapp3.1\CURS.Domain.Core.dll
 C:\Users\ASUS\source\repos\CURS\CURS.Domain.Core\obj\Debug\netcoreapp3.1\CURS.Domain.Core.pdb
 C:\Users\ASUS\source\repos\CURS\CURS.Domain.Core\obj\Debug\netcoreapp3.1\CURS.Domain.Core.csproj.AssemblyReference.cache
+C:\Users\ASUS\source\repos\CURS\CURS.Domain.Core\bin\Debug\netcoreapp3.1\CURS.Domain.Interfaces.Core.dll
+C:\Users\ASUS\source\repos\CURS\CURS.Domain.Core\bin\Debug\netcoreapp3.1\CURS.Domain.Interfaces.Core.pdb
+C:\Users\ASUS\source\repos\CURS\CURS.Domain.Core\obj\Debug\netcoreapp3.1\CURS.Domain.Core.csproj.CopyComplete

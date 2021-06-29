@@ -15,8 +15,16 @@
         }
       },
       "CURS.Domain.Core/1.0.0": {
+        "dependencies": {
+          "CURS.Domain.Interfaces.Core": "1.0.0"
+        },
         "runtime": {
           "CURS.Domain.Core.dll": {}
+        }
+      },
+      "CURS.Domain.Interfaces.Core/1.0.0": {
+        "runtime": {
+          "CURS.Domain.Interfaces.Core.dll": {}
         }
       }
     }
@@ -28,6 +36,11 @@
       "sha512": ""
     },
     "CURS.Domain.Core/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "CURS.Domain.Interfaces.Core/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

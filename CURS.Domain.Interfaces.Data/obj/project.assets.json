@@ -5,11 +5,37 @@
       "CURS.Domain.Core/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v3.1",
+        "dependencies": {
+          "CURS.Domain.Interfaces.Core": "1.0.0"
+        },
         "compile": {
           "bin/placeholder/CURS.Domain.Core.dll": {}
         },
         "runtime": {
           "bin/placeholder/CURS.Domain.Core.dll": {}
+        }
+      },
+      "CURS.Domain.Dtos/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "dependencies": {
+          "CURS.Domain.Core": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/CURS.Domain.Dtos.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CURS.Domain.Dtos.dll": {}
+        }
+      },
+      "CURS.Domain.Interfaces.Core/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "compile": {
+          "bin/placeholder/CURS.Domain.Interfaces.Core.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CURS.Domain.Interfaces.Core.dll": {}
         }
       }
     }
@@ -19,11 +45,23 @@
       "type": "project",
       "path": "../CURS.Domain.Core/CURS.Domain.Core.csproj",
       "msbuildProject": "../CURS.Domain.Core/CURS.Domain.Core.csproj"
+    },
+    "CURS.Domain.Dtos/1.0.0": {
+      "type": "project",
+      "path": "../CURS.Domain.Dtos/CURS.Domain.Dtos.csproj",
+      "msbuildProject": "../CURS.Domain.Dtos/CURS.Domain.Dtos.csproj"
+    },
+    "CURS.Domain.Interfaces.Core/1.0.0": {
+      "type": "project",
+      "path": "../CURS.Domain.Interfaces.Core/CURS.Domain.Interfaces.Core.csproj",
+      "msbuildProject": "../CURS.Domain.Interfaces.Core/CURS.Domain.Interfaces.Core.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
-      "CURS.Domain.Core >= 1.0.0"
+      "CURS.Domain.Core >= 1.0.0",
+      "CURS.Domain.Dtos >= 1.0.0",
+      "CURS.Domain.Interfaces.Core >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -59,6 +97,12 @@
           "projectReferences": {
             "C:\\Users\\ASUS\\source\\repos\\CURS\\CURS.Domain.Core\\CURS.Domain.Core.csproj": {
               "projectPath": "C:\\Users\\ASUS\\source\\repos\\CURS\\CURS.Domain.Core\\CURS.Domain.Core.csproj"
+            },
+            "C:\\Users\\ASUS\\source\\repos\\CURS\\CURS.Domain.Dtos\\CURS.Domain.Dtos.csproj": {
+              "projectPath": "C:\\Users\\ASUS\\source\\repos\\CURS\\CURS.Domain.Dtos\\CURS.Domain.Dtos.csproj"
+            },
+            "C:\\Users\\ASUS\\source\\repos\\CURS\\CURS.Domain.Interfaces.Core\\CURS.Domain.Interfaces.Core.csproj": {
+              "projectPath": "C:\\Users\\ASUS\\source\\repos\\CURS\\CURS.Domain.Interfaces.Core\\CURS.Domain.Interfaces.Core.csproj"
             }
           }
         }

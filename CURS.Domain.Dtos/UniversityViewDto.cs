@@ -3,7 +3,7 @@ using System;
 
 namespace CURS.Domain.Dtos
 {
-    public class UniversityViewDto
+    public class UniversityViewDto : IDto
     {
         public DateTime DateModified { get; set; }
         public DateTime DateOfCreation { get; set; }

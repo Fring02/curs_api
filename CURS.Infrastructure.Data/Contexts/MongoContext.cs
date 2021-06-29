@@ -1,11 +1,8 @@
-﻿using CURS.Domain.Core.Config;
-using CURS.Domain.Core.Models;
+﻿using CURS.Infrastructure.Data.Config;
 using CURS.Infrastructure.Data.Documents;
 using Microsoft.Extensions.Options;
 using MongoDB.Driver;
 using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace CURS.Infrastructure.Data.Contexts
 {
@@ -18,8 +15,6 @@ namespace CURS.Infrastructure.Data.Contexts
             _db = client.GetDatabase(options.Value.Database) ??
                 throw new ArgumentException($"Failed to connect to database {options.Value.Database}");
         }
-
-
 
         public IMongoCollection<UniversityDocument> Universities => _db.GetCollection<UniversityDocument>("Copy_of_DirUniversities");
     }

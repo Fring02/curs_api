@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace CURS.Domain.Core.Config
+namespace CURS.Infrastructure.Data.Config
 {
     public class DatabaseSettings
     {
