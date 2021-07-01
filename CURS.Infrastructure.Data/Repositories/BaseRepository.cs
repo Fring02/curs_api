@@ -1,4 +1,5 @@
-﻿using CURS.Domain.Dtos;
+﻿using AutoMapper;
+using CURS.Domain.Dtos;
 using CURS.Domain.Interfaces.Core;
 using CURS.Domain.Interfaces.Data;
 using CURS.Infrastructure.Data.Contexts;
@@ -9,21 +10,39 @@ using System.Threading.Tasks;
 
 namespace CURS.Infrastructure.Data.Repositories
 {
-    public abstract class BaseRepository<TEntity> : IRepository<TEntity> where TEntity : IEntity
+    public class BaseRepository<TEntity> : IRepository<TEntity> where TEntity : IEntity
     {
         protected MongoContext _context;
-        public BaseRepository(MongoContext context)
+        protected IMapper _mapper;
+        public BaseRepository(MongoContext context, IMapper mapper)
         {
             _context = context;
+            _mapper = mapper;
         }
-        public abstract Task CreateAsync(TEntity model);
 
-        public abstract Task DeleteAsync(TEntity model);
+        public Task CreateAsync(TEntity model)
+        {
+            throw new NotImplementedException();
+        }
 
-        public abstract Task<IReadOnlyCollection<TEntityDto>> GetAllAsync<TEntityDto>() where TEntityDto : IDto;
+        public Task DeleteAsync(TEntity model)
+        {
+            throw new NotImplementedException();
+        }
 
-        public abstract Task<TEntity> GetByIdAsync<TId>(TId id);
+        public Task<IReadOnlyCollection<TEntityDto>> GetAllAsync<TEntityDto>() where TEntityDto : IDto
+        {
+            throw new NotImplementedException();
+        }
 
-        public abstract Task UpdateAsync(TEntity model);
+        public Task<TEntity> GetByIdAsync<TId>(TId id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task UpdateAsync(TEntity model)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

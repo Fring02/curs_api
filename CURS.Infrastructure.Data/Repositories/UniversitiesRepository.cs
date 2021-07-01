@@ -1,4 +1,5 @@
-﻿using CURS.Domain.Core.Models;
+﻿using AutoMapper;
+using CURS.Domain.Core.Models;
 using CURS.Domain.Dtos;
 using CURS.Domain.Interfaces.Data;
 using CURS.Infrastructure.Data.Contexts;
@@ -14,25 +15,11 @@ namespace CURS.Infrastructure.Data.Repositories
 {
     public class UniversitiesRepository : BaseRepository<University>, IUniversitiesRepository
     {
-        public UniversitiesRepository(MongoContext context) : base(context)
+        public UniversitiesRepository(MongoContext context, IMapper mapper) : base(context, mapper)
         {
             _context = context;
         }
 
-        public override Task CreateAsync(University model)
-        {
-            throw new NotImplementedException();
-        }
-
-        public override Task DeleteAsync(University model)
-        {
-            throw new NotImplementedException();
-        }
-
-        public override Task<IReadOnlyCollection<TEntityDto>> GetAllAsync<TEntityDto>()
-        {
-            throw new NotImplementedException();
-        }
 
         public async Task<IEnumerable<UniversityViewDto>> GetByFilter(UniversityFilterDto filter)
         {
@@ -75,14 +62,5 @@ namespace CURS.Infrastructure.Data.Repositories
                 ToListAsync();
         }
 
-        public override Task<University> GetByIdAsync<TId>(TId id)
-        {
-            throw new NotImplementedException();
-        }
-
-        public override Task UpdateAsync(University model)
-        {
-            throw new NotImplementedException();
-        }
     }
 }

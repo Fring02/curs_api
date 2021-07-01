@@ -5,7 +5,7 @@ using System.Text;
 
 namespace CURS.Domain.Dtos
 {
-    public class UniversityFilterDto
+    public class UniversityFilterDto : IDto
     {
         public DateTime DateModified { get; set; }
         public DateTime DateOfCreation { get; set; }

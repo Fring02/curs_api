@@ -50,3 +50,5 @@ C:\Users\ASUS\source\repos\CURS\CURS.API\bin\Debug\netcoreapp3.1\Swashbuckle.Asp
 C:\Users\ASUS\source\repos\CURS\CURS.API\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerGen.dll
 C:\Users\ASUS\source\repos\CURS\CURS.API\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerUI.dll
 C:\Users\ASUS\source\repos\CURS\CURS.API\obj\Debug\netcoreapp3.1\CURS.API.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\ASUS\source\repos\CURS\CURS.API\bin\Debug\netcoreapp3.1\AutoMapper.dll
+C:\Users\ASUS\source\repos\CURS\CURS.API\bin\Debug\netcoreapp3.1\AutoMapper.Extensions.Microsoft.DependencyInjection.dll

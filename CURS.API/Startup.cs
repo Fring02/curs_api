@@ -2,6 +2,7 @@ using CURS.Domain.Interfaces.Data;
 using CURS.Infrastructure.Data.Config;
 using CURS.Infrastructure.Data.Contexts;
 using CURS.Infrastructure.Data.Repositories;
+using CURS.Infrastructure.Data.Utils;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -27,10 +28,12 @@ namespace CURS.API
             services.Configure<DatabaseSettings>(Configuration.GetSection("MongoSettings"));
             services.AddScoped<MongoContext>();
             services.AddScoped<IUniversitiesRepository, UniversitiesRepository>();
+            services.AddScoped<IQSExpertsRepository, QSExpertsRepository>();
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "CURS ArsuDev API", Version = "v1" });
             });
+            services.AddAutoMapper(typeof(CURSMapper));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

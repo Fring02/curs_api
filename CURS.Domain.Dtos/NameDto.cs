@@ -5,7 +5,7 @@ using System.Text;
 
 namespace CURS.Domain.Dtos
 {
-    public class UniversityNameDto : Name, IDto
+    public class NameDto : Name, IDto
     {
     }
 }

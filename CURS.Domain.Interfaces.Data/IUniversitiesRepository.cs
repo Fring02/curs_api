@@ -8,8 +8,7 @@ using System.Threading.Tasks;
 
 namespace CURS.Domain.Interfaces.Data
 {
-    public interface IUniversitiesRepository : IRepository<University>
+    public interface IUniversitiesRepository : IRepository<University>, IFilter<UniversityFilterDto, UniversityViewDto>
     {
-        Task<IEnumerable<UniversityViewDto>> GetByFilter(UniversityFilterDto filter);
     }
 }

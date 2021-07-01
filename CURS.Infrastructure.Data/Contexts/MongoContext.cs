@@ -16,6 +16,11 @@ namespace CURS.Infrastructure.Data.Contexts
                 throw new ArgumentException($"Failed to connect to database {options.Value.Database}");
         }
 
-        public IMongoCollection<UniversityDocument> Universities => _db.GetCollection<UniversityDocument>("Copy_of_DirUniversities");
+        internal IMongoCollection<UniversityDocument> Universities => _db.GetCollection<UniversityDocument>("Copy_of_DirUniversities");
+        internal IMongoCollection<QSExpertDocument> QSExperts => _db.GetCollection<QSExpertDocument>("QSExperts");
+        internal IMongoCollection<TitleDocument> Titles => _db.GetCollection<TitleDocument>("DirTitle");
+        internal IMongoCollection<CountryDocument> Countries => _db.GetCollection<CountryDocument>("DirCountry");
+        internal IMongoCollection<BooleanDocument> Booleans => _db.GetCollection<BooleanDocument>("DirBoolean");
+        internal IMongoCollection<QSDocument> QS => _db.GetCollection<QSDocument>("DirQS");
     }
 }
