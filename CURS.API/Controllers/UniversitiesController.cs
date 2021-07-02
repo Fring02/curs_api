@@ -9,7 +9,7 @@ namespace CURS.API.Controllers
     [ApiController]
     public class UniversitiesController : ControllerBase
     {
-        private IUniversitiesRepository _repos;
+        private readonly IUniversitiesRepository _repos;
 
         public UniversitiesController(IUniversitiesRepository repos)
         {

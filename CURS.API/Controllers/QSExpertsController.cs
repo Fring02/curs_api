@@ -14,7 +14,7 @@ namespace CURS.API.Controllers
     public class QSExpertsController : ControllerBase
     {
 
-        private IQSExpertsRepository _repos;
+        private readonly IQSExpertsRepository _repos;
 
         public QSExpertsController(IQSExpertsRepository repos)
         {

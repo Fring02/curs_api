@@ -3,6 +3,7 @@ using CURS.Infrastructure.Data.Documents;
 using Microsoft.Extensions.Options;
 using MongoDB.Driver;
 using System;
+using CURS.Domain.Dtos;
 
 namespace CURS.Infrastructure.Data.Contexts
 {
@@ -18,6 +19,9 @@ namespace CURS.Infrastructure.Data.Contexts
 
         internal IMongoCollection<UniversityDocument> Universities => _db.GetCollection<UniversityDocument>("Copy_of_DirUniversities");
         internal IMongoCollection<QSExpertDocument> QSExperts => _db.GetCollection<QSExpertDocument>("QSExperts");
+
+        internal IMongoCollection<QSExpertFieldsDocument> QSFieldsExperts =>
+            _db.GetCollection<QSExpertFieldsDocument>("QSExperts");
         internal IMongoCollection<TitleDocument> Titles => _db.GetCollection<TitleDocument>("DirTitle");
         internal IMongoCollection<CountryDocument> Countries => _db.GetCollection<CountryDocument>("DirCountry");
         internal IMongoCollection<BooleanDocument> Booleans => _db.GetCollection<BooleanDocument>("DirBoolean");
