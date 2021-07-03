@@ -14,12 +14,12 @@ namespace CURS.Infrastructure.Data.Utils
 {
     internal class QSExpertFilterBuilder
     {
-        private FilterDefinition<QSExpertDocument> _filterExp;
+        private FilterDefinition<QsExpertDocument> _filterExp;
         private readonly MongoContext _context;
         private readonly IMapper _mapper;
         public QSExpertFilterBuilder(MongoContext context, IMapper mapper)
         {
-            _filterExp = Builders<QSExpertDocument>.Filter.Empty;
+            _filterExp = Builders<QsExpertDocument>.Filter.Empty;
             _context = context;
             _mapper = mapper;
         }
@@ -28,7 +28,7 @@ namespace CURS.Infrastructure.Data.Utils
             if (!string.IsNullOrEmpty(universityId))
             {
                 var parsedId =  ObjectId.Parse(universityId);
-                _filterExp &= Builders<QSExpertDocument>.Filter.Eq("University.ID", parsedId);
+                _filterExp &= Builders<QsExpertDocument>.Filter.Eq("University.ID", parsedId);
             }
             return this;
         }
@@ -37,7 +37,7 @@ namespace CURS.Infrastructure.Data.Utils
         {
             if (!string.IsNullOrEmpty(firstnameRu))
             {
-                _filterExp &= Builders<QSExpertDocument>.Filter.Eq("Employer.FirstNameRu", firstnameRu);
+                _filterExp &= Builders<QsExpertDocument>.Filter.Eq("Employer.FirstNameRu", firstnameRu);
             }
             return this;
         }
@@ -45,7 +45,7 @@ namespace CURS.Infrastructure.Data.Utils
         {
             if (!string.IsNullOrEmpty(surnameRu))
             {
-                _filterExp &= Builders<QSExpertDocument>.Filter.Eq("Employer.SurNameRu", surnameRu);
+                _filterExp &= Builders<QsExpertDocument>.Filter.Eq("Employer.SurNameRu", surnameRu);
             }
             return this;
         }
@@ -53,7 +53,7 @@ namespace CURS.Infrastructure.Data.Utils
         {
             if (!string.IsNullOrEmpty(middlenameRu))
             {
-                _filterExp &= Builders<QSExpertDocument>.Filter.Eq("Employer.MiddleNameRu", middlenameRu);
+                _filterExp &= Builders<QsExpertDocument>.Filter.Eq("Employer.MiddleNameRu", middlenameRu);
             }
             return this;
         }
@@ -61,7 +61,7 @@ namespace CURS.Infrastructure.Data.Utils
         {
             if (!string.IsNullOrEmpty(firstnameEn))
             {
-                _filterExp &= Builders<QSExpertDocument>.Filter.Eq("Employer.FirstNameEn", firstnameEn);
+                _filterExp &= Builders<QsExpertDocument>.Filter.Eq("Employer.FirstNameEn", firstnameEn);
             }
             return this;
         }
@@ -69,7 +69,7 @@ namespace CURS.Infrastructure.Data.Utils
         {
             if (!string.IsNullOrEmpty(surnameEn))
             {
-                _filterExp &= Builders<QSExpertDocument>.Filter.Eq("Employer.SurNameEn", surnameEn);
+                _filterExp &= Builders<QsExpertDocument>.Filter.Eq("Employer.SurNameEn", surnameEn);
             }
             return this;
         }
@@ -77,7 +77,7 @@ namespace CURS.Infrastructure.Data.Utils
         {
             if (!string.IsNullOrEmpty(middlenameEn))
             {
-                _filterExp &= Builders<QSExpertDocument>.Filter.Eq("Employer.MiddleNameEn", middlenameEn);
+                _filterExp &= Builders<QsExpertDocument>.Filter.Eq("Employer.MiddleNameEn", middlenameEn);
             }
             return this;
         }
@@ -87,7 +87,7 @@ namespace CURS.Infrastructure.Data.Utils
             if (!string.IsNullOrEmpty(countryId))
             {
                 var parsedId = ObjectId.Parse(countryId);
-                _filterExp &= Builders<QSExpertDocument>.Filter.Eq("Country.ID", parsedId);
+                _filterExp &= Builders<QsExpertDocument>.Filter.Eq("Country.ID", parsedId);
             }
             return this;
         }
@@ -96,7 +96,7 @@ namespace CURS.Infrastructure.Data.Utils
         {
             if (!string.IsNullOrEmpty(empUniversity))
             {
-                _filterExp &= Builders<QSExpertDocument>.Filter.Eq("EmpUniversity", empUniversity);
+                _filterExp &= Builders<QsExpertDocument>.Filter.Eq("EmpUniversity", empUniversity);
             }
             return this;
         }
@@ -104,7 +104,7 @@ namespace CURS.Infrastructure.Data.Utils
         {
             if (!string.IsNullOrEmpty(unit))
             {
-                _filterExp &= Builders<QSExpertDocument>.Filter.Eq("Unit", unit);
+                _filterExp &= Builders<QsExpertDocument>.Filter.Eq("Unit", unit);
             }
             return this;
         }
@@ -112,7 +112,7 @@ namespace CURS.Infrastructure.Data.Utils
         {
             if (!string.IsNullOrEmpty(position))
             {
-                _filterExp &= Builders<QSExpertDocument>.Filter.Eq("Position", position);
+                _filterExp &= Builders<QsExpertDocument>.Filter.Eq("Position", position);
             }
             return this;
         }
@@ -121,7 +121,7 @@ namespace CURS.Infrastructure.Data.Utils
             if (!string.IsNullOrEmpty(titleId))
             {
                 var parsedId = ObjectId.Parse(titleId);
-                _filterExp &= Builders<QSExpertDocument>.Filter.Eq("Title.ID", parsedId);
+                _filterExp &= Builders<QsExpertDocument>.Filter.Eq("Title.ID", parsedId);
             }
             return this;
         }
@@ -131,7 +131,7 @@ namespace CURS.Infrastructure.Data.Utils
             if (date != default)
             {
                 var tomorrow = date.AddDays(1);
-                _filterExp &= Builders<QSExpertDocument>.Filter.Where(u =>
+                _filterExp &= Builders<QsExpertDocument>.Filter.Where(u =>
                 u.Employer.BirthDate >= date && u.Employer.BirthDate < tomorrow);
             }
             return this;
@@ -141,7 +141,7 @@ namespace CURS.Infrastructure.Data.Utils
         {
             if (!string.IsNullOrEmpty(number))
             {
-                _filterExp &= Builders<QSExpertDocument>.Filter.Eq("Employer.MobileNumber", number);
+                _filterExp &= Builders<QsExpertDocument>.Filter.Eq("Employer.MobileNumber", number);
             }
             return this;
         }
@@ -150,7 +150,7 @@ namespace CURS.Infrastructure.Data.Utils
         {
             if (!string.IsNullOrEmpty(email))
             {
-                _filterExp &= Builders<QSExpertDocument>.Filter.Eq("Employer.Email", email);
+                _filterExp &= Builders<QsExpertDocument>.Filter.Eq("Employer.Email", email);
             }
             return this;
         }
@@ -159,7 +159,7 @@ namespace CURS.Infrastructure.Data.Utils
             if (!string.IsNullOrEmpty(booleanId))
             {
                 var parsedId = ObjectId.Parse(booleanId);
-                _filterExp &= Builders<QSExpertDocument>.Filter.Eq("Boolean.ID", parsedId);
+                _filterExp &= Builders<QsExpertDocument>.Filter.Eq("Boolean.ID", parsedId);
             }
             return this;
         }
@@ -169,24 +169,24 @@ namespace CURS.Infrastructure.Data.Utils
             if (!string.IsNullOrEmpty(qsId))
             {
                 var parsedId = ObjectId.Parse(qsId);
-                _filterExp &= Builders<QSExpertDocument>.Filter.Eq("QS.ID", parsedId);
+                _filterExp &= Builders<QsExpertDocument>.Filter.Eq("QS.ID", parsedId);
             }
             return this;
         }
         public async Task<IEnumerable<QSExpertViewDto>> GetResultAsync()
         {
            var experts = await _context.QSExperts.Aggregate().Match(_filterExp)
-                      .Lookup<UniversityDocument, QSExpertDocument>("Copy_of_DirUniversities", "University.ID", "_id", "University")
-                      .Unwind<QSExpertDocument, QSExpertDocument>(c => c.University)
-                      .Lookup<TitleDocument, QSExpertDocument>("DirTitle", "Title.ID", "_id", "Title")
-                      .Unwind<QSExpertDocument, QSExpertDocument>(c => c.Title)
-                      .Lookup<CountryDocument, QSExpertDocument>("DirCountry", "Country.ID", "_id", "Country")
-                      .Unwind<QSExpertDocument, QSExpertDocument>(c => c.Country)
-                      .Lookup<BooleanDocument, QSExpertDocument>("DirBoolean", "Boolean.ID", "_id", "Boolean")
-                      .Unwind<QSExpertDocument, QSExpertDocument>(c => c.Boolean)
-                      .Lookup<QSDocument, QSExpertDocument>("DirQS", "QS.ID", "_id", "QS")
-                      .Unwind<QSExpertDocument, QSExpertDocument>(c => c.QS)
-                      .Project(Builders<QSExpertDocument>.Projection.Expression(q =>
+                      .Lookup<UniversityDocument, QSExpertViewDocument>("Copy_of_DirUniversities", "University.ID", "_id", "University")
+                      .Unwind<QSExpertViewDocument, QSExpertViewDocument>(c => c.University)
+                      .Lookup<TitleDocument, QSExpertViewDocument>("DirTitle", "Title.ID", "_id", "Title")
+                      .Unwind<QSExpertViewDocument, QSExpertViewDocument>(c => c.Title)
+                      .Lookup<CountryDocument, QSExpertViewDocument>("DirCountry", "Country.ID", "_id", "Country")
+                      .Unwind<QSExpertViewDocument, QSExpertViewDocument>(c => c.Country)
+                      .Lookup<BooleanDocument, QSExpertViewDocument>("DirBoolean", "Boolean.ID", "_id", "Boolean")
+                      .Unwind<QSExpertViewDocument, QSExpertViewDocument>(c => c.Boolean)
+                      .Lookup<QSDocument, QSExpertViewDocument>("DirQS", "QS.ID", "_id", "QS")
+                      .Unwind<QSExpertViewDocument, QSExpertViewDocument>(c => c.QS)
+                      .Project(Builders<QSExpertViewDocument>.Projection.Expression(q =>
                       new QSExpertViewDto
                       {
                           University = _mapper.Map<NameDto>(q.University.Name),

@@ -10,20 +10,17 @@ using System.Threading.Tasks;
 
 namespace CURS.Infrastructure.Data.Repositories
 {
-    public class BaseRepository<TEntity> : IRepository<TEntity> where TEntity : IEntity
+    public abstract class BaseRepository<TEntity> : IRepository<TEntity> where TEntity : IEntity
     {
-        protected MongoContext _context;
-        protected IMapper _mapper;
+        protected readonly MongoContext _context;
+        protected readonly IMapper _mapper;
         public BaseRepository(MongoContext context, IMapper mapper)
         {
             _context = context;
             _mapper = mapper;
         }
 
-        public Task CreateAsync(TEntity model)
-        {
-            throw new NotImplementedException();
-        }
+        public abstract Task CreateAsync(TEntity model);
 
         public Task DeleteAsync(TEntity model)
         {

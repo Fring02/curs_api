@@ -5,7 +5,7 @@ using MongoDB.Bson.Serialization.Attributes;
 
 namespace CURS.Infrastructure.Data.Documents
 {
-    internal class CountryDocument : IMongoDocument<ObjectId>
+    public class CountryDocument : IMongoDocument<ObjectId>
     {
         [BsonId]
         public ObjectId Id { get; set; }

@@ -1,5 +1,6 @@
 ﻿using System.Threading.Tasks;
 using CURS.Domain.Dtos;
+using CURS.Domain.Dtos.Filter;
 
 namespace CURS.Domain.Interfaces.Data
 {

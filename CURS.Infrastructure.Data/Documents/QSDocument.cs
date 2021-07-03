@@ -4,11 +4,12 @@ using MongoDB.Bson.Serialization.Attributes;
 
 namespace CURS.Infrastructure.Data.Documents
 {
-    internal class QSDocument
+    public class QSDocument
     {
 
         [BsonId]
         public ObjectId Id { get; set; }
+        public string ExtraCode { get; set; }
         public Name Name { get; set; }
     }
 }

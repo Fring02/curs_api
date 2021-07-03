@@ -8,7 +8,7 @@ using System.Text;
 
 namespace CURS.Infrastructure.Data.Documents
 {
-    internal class UniversityDocument : University, IMongoDocument<ObjectId>
+    public class UniversityDocument : University, IMongoDocument<ObjectId>
     {
         [BsonId]
         public ObjectId Id { get; set; }

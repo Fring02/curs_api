@@ -10,6 +10,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
+using CURS.Domain.Dtos.Filter;
 
 namespace CURS.Infrastructure.Data.Repositories
 {
@@ -17,7 +18,6 @@ namespace CURS.Infrastructure.Data.Repositories
     {
         public UniversitiesRepository(MongoContext context, IMapper mapper) : base(context, mapper)
         {
-            _context = context;
         }
 
 
@@ -62,5 +62,9 @@ namespace CURS.Infrastructure.Data.Repositories
                 ToListAsync();
         }
 
+        public override Task CreateAsync(University model)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

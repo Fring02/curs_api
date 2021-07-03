@@ -5,10 +5,11 @@ using MongoDB.Bson.Serialization.Attributes;
 
 namespace CURS.Infrastructure.Data.Documents
 {
-    internal class TitleDocument : IMongoDocument<ObjectId>
+    public class TitleDocument : IMongoDocument<ObjectId>
     {
         [BsonId]
         public ObjectId Id { get; set; }
+        public string ExtraCode { get; set; }
         public Name Name { get; set; }
     }
 }

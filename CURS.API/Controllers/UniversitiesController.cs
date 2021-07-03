@@ -2,6 +2,7 @@
 using CURS.Domain.Interfaces.Data;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
+using CURS.Domain.Dtos.Filter;
 
 namespace CURS.API.Controllers
 {

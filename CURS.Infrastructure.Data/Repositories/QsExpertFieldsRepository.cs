@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using AutoMapper;
 using CURS.Domain.Dtos;
+using CURS.Domain.Dtos.Filter;
 using CURS.Domain.Interfaces.Data;
 using CURS.Infrastructure.Data.Contexts;
 using CURS.Infrastructure.Data.Documents;
@@ -47,12 +48,12 @@ namespace CURS.Infrastructure.Data.Repositories
             }
             if (filter.Position)
             {
-                result.Positions = await _context.QSExperts.Find(_ => true).Project(Builders<QSExpertDocument>
+                result.Positions = await _context.QSExperts.Find(_ => true).Project(Builders<QsExpertDocument>
                     .Projection.Expression(c => c.Position)).ToListAsync();
             }
             if (filter.Email)
             {
-                result.Emails = await _context.QSExperts.Find(_ => true).Project(Builders<QSExpertDocument>
+                result.Emails = await _context.QSExperts.Find(_ => true).Project(Builders<QsExpertDocument>
                     .Projection.Expression(c => c.Employer.Email)).ToListAsync();
             }
             if (filter.Title)
@@ -62,34 +63,34 @@ namespace CURS.Infrastructure.Data.Repositories
             }
             if (filter.BirthDate)
             {
-                result.BirthDates = await _context.QSExperts.Find(_ => true).Project(Builders<QSExpertDocument>
+                result.BirthDates = await _context.QSExperts.Find(_ => true).Project(Builders<QsExpertDocument>
                     .Projection.Expression(c => c.Employer.BirthDate)).ToListAsync();
             }
             if (filter.Unit)
             {
-                result.Units = await _context.QSExperts.Find(_ => true).Project(Builders<QSExpertDocument>
+                result.Units = await _context.QSExperts.Find(_ => true).Project(Builders<QsExpertDocument>
                     .Projection.Expression(c => c.Unit)).ToListAsync();
             }
             if (filter.EmpUniversity)
             {
-                result.EmpUniversities = await _context.QSExperts.Find(_ => true).Project(Builders<QSExpertDocument>
+                result.EmpUniversities = await _context.QSExperts.Find(_ => true).Project(Builders<QsExpertDocument>
                     .Projection.Expression(c => c.EmpUniversity)).ToListAsync();
             }
             if (filter.MobileNumber)
             {
-                result.MobileNumbers = await _context.QSExperts.Find(_ => true).Project(Builders<QSExpertDocument>
+                result.MobileNumbers = await _context.QSExperts.Find(_ => true).Project(Builders<QsExpertDocument>
                     .Projection.Expression(c => c.Employer.MobileNumber)).ToListAsync();
             }
             if (filter.FioRu)
             {
-                result.FioRus = await _context.QSExperts.Find(_ => true).Project(Builders<QSExpertDocument>
+                result.FioRus = await _context.QSExperts.Find(_ => true).Project(Builders<QsExpertDocument>
                     .Projection
                     .Expression(q => q.Employer.SurNameRu + " " + q.Employer.FirstNameRu + " " + q.Employer.MiddleNameRu))
                     .ToListAsync();
             }
             if (filter.FioEn)
             {
-                result.FioEngs = await _context.QSExperts.Find(_ => true).Project(Builders<QSExpertDocument>
+                result.FioEngs = await _context.QSExperts.Find(_ => true).Project(Builders<QsExpertDocument>
                         .Projection
                         .Expression(q => q.Employer.SurNameEn + " " + q.Employer.FirstNameEn + " " + q.Employer.MiddleNameEn))
                     .ToListAsync();

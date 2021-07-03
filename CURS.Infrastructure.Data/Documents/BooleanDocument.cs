@@ -5,11 +5,12 @@ using MongoDB.Bson.Serialization.Attributes;
 
 namespace CURS.Infrastructure.Data.Documents
 {
-    internal class BooleanDocument : IMongoDocument<ObjectId>
+    public class BooleanDocument : IMongoDocument<ObjectId>
     {
 
         [BsonId]
         public ObjectId Id { get; set; }
+        public string ExtraCode { get; set; }
         public Name Name { get; set; }
     }
 }

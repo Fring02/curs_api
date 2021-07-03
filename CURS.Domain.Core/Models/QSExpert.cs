@@ -16,5 +16,10 @@ namespace CURS.Domain.Core.Models
         public string Organization { get; set; }
         public string Sector { get; set; }
         public string Position { get; set; }
+        public string UniversityId { get; set; }
+        public string CountryId { get; set; }
+        public string TitleId { get; set; }
+        public string BooleanId { get; set; }
+        public string QsId { get; set; }
     }
 }

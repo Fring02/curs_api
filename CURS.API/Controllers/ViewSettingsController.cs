@@ -1,5 +1,6 @@
 ﻿using System.Threading.Tasks;
 using CURS.Domain.Dtos;
+using CURS.Domain.Dtos.Filter;
 using CURS.Domain.Interfaces.Data;
 using Microsoft.AspNetCore.Mvc;
 
