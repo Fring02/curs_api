@@ -5,6 +5,7 @@ using MongoDB.Bson.Serialization.Attributes;
 
 namespace CURS.Infrastructure.Data.Documents
 {
+    [BsonIgnoreExtraElements]
     public class ProgrammeDocument : Programme, IMongoDocument<ObjectId>
     {
         [BsonId]

@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 using AutoMapper.Internal;
 using CURS.Domain.Dtos;
@@ -13,7 +12,6 @@ namespace CURS.API.Controllers
     public class ProgrammesController : ControllerBase
     {
         private readonly IProgrammesRepository _repos;
-
         public ProgrammesController(IProgrammesRepository repos)
         {
             _repos = repos;
@@ -48,7 +46,7 @@ namespace CURS.API.Controllers
                 });
                 return Ok(res);
             }
-            catch (Exception)
+            catch
             {
                 throw;
                 res.Error++;
