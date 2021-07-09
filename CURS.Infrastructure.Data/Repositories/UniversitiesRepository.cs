@@ -14,14 +14,14 @@ using CURS.Domain.Dtos.Filter;
 
 namespace CURS.Infrastructure.Data.Repositories
 {
-    public class UniversitiesRepository : BaseRepository<University>, IUniversitiesRepository
+    public class UniversitiesRepository : BaseRepository<University, UniversityViewDto>, IUniversitiesRepository
     {
         public UniversitiesRepository(MongoContext context, IMapper mapper) : base(context, mapper)
         {
         }
 
 
-        public async Task<IEnumerable<UniversityViewDto>> GetByFilter(UniversityFilterDto filter)
+        public async Task<IReadOnlyCollection<UniversityViewDto>> GetByFilter(UniversityFilterDto filter)
         {
             FilterDefinition<UniversityDocument> filterExpression = Builders<UniversityDocument>.Filter.Empty;
             if (!string.IsNullOrEmpty(filter.Name))

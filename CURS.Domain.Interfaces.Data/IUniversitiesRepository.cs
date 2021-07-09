@@ -9,7 +9,7 @@ using CURS.Domain.Dtos.Filter;
 
 namespace CURS.Domain.Interfaces.Data
 {
-    public interface IUniversitiesRepository : IRepository<University>, IFilter<UniversityFilterDto, UniversityViewDto>
+    public interface IUniversitiesRepository : IRepository<University, UniversityViewDto>, IFilter<UniversityFilterDto, UniversityViewDto>
     {
     }
 }

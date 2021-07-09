@@ -7,12 +7,12 @@ using System.Threading.Tasks;
 
 namespace CURS.Domain.Interfaces.Data
 {
-    public interface IRepository<TEntity> where TEntity : IEntity
+    public interface IRepository<TEntity, TEntityViewDto> where TEntity : IEntity
     {
         Task CreateAsync(TEntity model);
         Task UpdateAsync(TEntity model);
         Task DeleteAsync(TEntity model);
-        Task<IReadOnlyCollection<TEntityDto>> GetAllAsync<TEntityDto>() where TEntityDto : IDto;
+        Task<IReadOnlyCollection<TEntityViewDto>> GetAllAsync();
         Task<TEntity> GetByIdAsync<TId>(TId id);
     }
 }

@@ -23,5 +23,6 @@ namespace CURS.Infrastructure.Data.Contexts
         internal IMongoCollection<CountryDocument> Countries => _db.GetCollection<CountryDocument>("DirCountry");
         internal IMongoCollection<BooleanDocument> Booleans => _db.GetCollection<BooleanDocument>("DirBoolean");
         internal IMongoCollection<QSDocument> QS => _db.GetCollection<QSDocument>("DirQS");
+        internal IMongoCollection<ProgrammeDocument> Programmes => _db.GetCollection<ProgrammeDocument>("Programmes");
     }
 }

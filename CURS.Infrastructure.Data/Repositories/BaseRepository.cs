@@ -10,7 +10,8 @@ using System.Threading.Tasks;
 
 namespace CURS.Infrastructure.Data.Repositories
 {
-    public abstract class BaseRepository<TEntity> : IRepository<TEntity> where TEntity : IEntity
+    public abstract class BaseRepository<TEntity, TEntityViewDto> : IRepository<TEntity, TEntityViewDto>
+        where TEntity : IEntity where  TEntityViewDto : IDto
     {
         protected readonly MongoContext _context;
         protected readonly IMapper _mapper;
@@ -27,7 +28,7 @@ namespace CURS.Infrastructure.Data.Repositories
             throw new NotImplementedException();
         }
 
-        public Task<IReadOnlyCollection<TEntityDto>> GetAllAsync<TEntityDto>() where TEntityDto : IDto
+        public virtual Task<IReadOnlyCollection<TEntityViewDto>> GetAllAsync()
         {
             throw new NotImplementedException();
         }

@@ -1,8 +1,9 @@
 ﻿using System;
+using CURS.Domain.Interfaces.Core;
 
 namespace CURS.Domain.Core.Models
 {
-    public class Employer
+    public class Employer : IEntity
     {
         public string FirstNameKk { get; set; }
         public string FirstNameRu { get; set; }

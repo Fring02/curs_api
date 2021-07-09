@@ -14,14 +14,14 @@ using MongoDB.Driver;
 
 namespace CURS.Infrastructure.Data.Repositories
 {
-    public class QSExpertsRepository : BaseRepository<QSExpert>, IQSExpertsRepository
+    public class QSExpertsRepository : BaseRepository<QSExpert, QSExpertViewDto>, IQSExpertsRepository
     {
         private QSExpertFilterBuilder _builder;
         public QSExpertsRepository(MongoContext context, IMapper mapper) : base(context, mapper)
         {
         }
 
-        public async Task<IEnumerable<QSExpertViewDto>> GetByFilter(QSExpertFilterDto filter)
+        public async Task<IReadOnlyCollection<QSExpertViewDto>> GetByFilter(QSExpertFilterDto filter)
         {
             _builder = new QSExpertFilterBuilder(_context, _mapper);
             if(filter.Employer != null)

@@ -173,7 +173,7 @@ namespace CURS.Infrastructure.Data.Utils
             }
             return this;
         }
-        public async Task<IEnumerable<QSExpertViewDto>> GetResultAsync()
+        public async Task<IReadOnlyCollection<QSExpertViewDto>> GetResultAsync()
         {
            var experts = await _context.QSExperts.Aggregate().Match(_filterExp)
                       .Lookup<UniversityDocument, QSExpertViewDocument>("Copy_of_DirUniversities", "University.ID", "_id", "University")
