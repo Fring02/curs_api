@@ -35,16 +35,15 @@ namespace CURS.Infrastructure.Data.Repositories
                 ID = s.ID,
                 ATT_DISCIPLINE = s.ATT_DISCIPLINE,
                 ATT_SPECIALITIES = s.ATT_SPECIALITIES,
-                ATT_COURSES = s.ATT_COURSES,
+                ATT_COURSES = s.ATT_COURSES.ToString(),
                 ATT_LANGUAGE_DEPARTMENTS = s.ATT_LANGUAGE_DEPARTMENTS,
                 ATT_TOTAL_CREDITS = s.ATT_TOTAL_CREDITS,
                 ATT_COUNT_OF_STUDENTS = s.ATT_COUNT_OF_STUDENTS,
-                ATT_GROUPS = s.ATT_GROUPS,
+                ATT_GROUPES = s.ATT_GROUPES,
                 ATT_SUBGROUPS = s.ATT_SUBGROUPS,
                 ATT_TOTAL = FactsSum(s.ATT_PRACTICE_FACT, s.ATT_LABORATORY_FACT, s.ATT_LECTURE_FACT, s.ATT_SRSP_FACT,
                     s.ATT_STUDY_PRACTICE, s.ATT_PROD_PRACTICE, s.ATT_PED_PRACTICE, s.ATT_DIPLOMA_PRACTICE,
-                    s.ATT_RESEARCH_PRACTICE, s.ATT_LANGUAGE_PRACTICE, s.ATT_DIPLOMA_WORK, s.ATT_DISSERTATION, s.ATT_GOS,
-                    s.ATT_OTHER),
+                    s.ATT_RESEARCH_PRACTICE, s.ATT_LANGUAGE_PRACTICE, s.ATT_DIPLOMA_WORK, s.ATT_DISSERTATION, s.ATT_GOS, s.ATT_OTHER),
                 ATT_LESSON_TYPE = s.ATT_LESSON_TYPE,
                 ATT_GROUP_CODE = s.ATT_GROUP_CODE,
                 ATT_CONNECTION_CODE = s.ATT_CONNECTION_CODE
@@ -57,13 +56,13 @@ namespace CURS.Infrastructure.Data.Repositories
             double researchPractice, double languagePractice, double diplomaWork, double dissertation, double gos,
             double other)
         {
+            double res = 0;
             if (practiceFact == 0 && labFact == 0 && lectureFact == 0 && srspFact == 0)
             {
                 return studyPractice + prodPractice + pedPractice + preDiplomaPractice + researchPractice +
                        languagePractice
                        + diplomaWork + dissertation + gos + other;
             }
-            double res = 0;
             if (practiceFact > 0 && (!_practiceFactCounted.ContainsKey(practiceFact) || !_practiceFactCounted[practiceFact]))
             {
                 res += practiceFact;

@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using AutoMapper.Internal;
 using CURS.Domain.Dtos;
@@ -21,29 +22,38 @@ namespace CURS.API.Controllers
         [HttpGet]
         public async Task<IActionResult> GetProgrammes()
         {
-            var programmes = await _repos.GetAllAsync();
             var res = new ProgrammesListDto();
-            programmes.ForAll(s =>
+            try
             {
-                res.PivotData.AddLast(new List<object>
+                var programmes = await _repos.GetAllAsync();
+                programmes.ForAll(s =>
                 {
-                    s.ID,
-                    s.ATT_DISCIPLINE,
-                    s.ATT_SPECIALITIES,
-                    s.ATT_COURSES,
-                    s.ATT_LANGUAGE_DEPARTMENTS,
-                    s.ATT_TOTAL_CREDITS,
-                    s.ATT_COUNT_OF_STUDENTS,
-                    s.ATT_GROUPS,
-                    s.ATT_SUBGROUPS,
-                    s.ATT_TOTAL,
-                    s.ATT_LESSON_TYPE,
-                    "факт",
-                    s.ATT_GROUP_CODE,
-                    s.ATT_CONNECTION_CODE
+                    res.PivotData.AddLast(new List<object>
+                    {
+                        s.ID,
+                        s.ATT_DISCIPLINE,
+                        s.ATT_SPECIALITIES,
+                        s.ATT_COURSES,
+                        s.ATT_LANGUAGE_DEPARTMENTS,
+                        s.ATT_TOTAL_CREDITS,
+                        s.ATT_COUNT_OF_STUDENTS,
+                        s.ATT_GROUPES,
+                        s.ATT_SUBGROUPS,
+                        s.ATT_TOTAL,
+                        s.ATT_LESSON_TYPE,
+                        "факт",
+                        s.ATT_GROUP_CODE,
+                        s.ATT_CONNECTION_CODE
+                    });
                 });
-            });
-            return Ok(res);
+                return Ok(res);
+            }
+            catch (Exception)
+            {
+                throw;
+                res.Error++;
+                return StatusCode(500, res);
+            }
         }
     }
 }
