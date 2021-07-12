@@ -39,7 +39,7 @@ namespace HelloWeb1
 
             app.UseEndpoints(endpoints =>
             {
-                var text = _conf["Text"];
+                var text = _conf["Response:Text"];
                 
                 endpoints.MapGet("/", async context =>
                 {

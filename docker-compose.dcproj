@@ -3,7 +3,7 @@
   <PropertyGroup Label="Globals">
     <ProjectVersion>2.1</ProjectVersion>
     <DockerTargetOS>Linux</DockerTargetOS>
-    <ProjectGuid>43ec73ac-f8b1-4f77-9627-c148704912cc</ProjectGuid>
+    <ProjectGuid>a572d4ba-8527-424c-b324-f00df8725d99</ProjectGuid>
     <DockerLaunchAction>LaunchBrowser</DockerLaunchAction>
     <DockerServiceUrl>{Scheme}://localhost:{ServicePort}</DockerServiceUrl>
     <DockerServiceName>helloweb1</DockerServiceName>

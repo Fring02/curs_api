@@ -17,6 +17,13 @@ namespace CURS.Infrastructure.Data.Utils
             _srspFactCounted = new Dictionary<double, bool>();
         }
 
+        public void Reset()
+        {
+            _lectureFactCounted.Clear();
+            _practiceFactCounted.Clear();
+            _laboratoryFactCounted.Clear();
+            _srspFactCounted.Clear();
+        }
 
         public double FactsSum(double practiceFact, double labFact, double lectureFact, double srspFact,
             double studyPractice, double prodPractice, double pedPractice, double preDiplomaPractice, 
