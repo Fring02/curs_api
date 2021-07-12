@@ -13,7 +13,15 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CURS.Domain.Interfaces.Data
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CURS.Domain.Dtos", "CURS.Domain.Dtos\CURS.Domain.Dtos.csproj", "{207025E0-E1B8-4524-A77F-336546F79EC3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CURS.Domain.Interfaces.Core", "CURS.Domain.Interfaces.Core\CURS.Domain.Interfaces.Core.csproj", "{EBB77761-70F7-4409-AE37-5A12348FB6A6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CURS.Domain.Interfaces.Core", "CURS.Domain.Interfaces.Core\CURS.Domain.Interfaces.Core.csproj", "{EBB77761-70F7-4409-AE37-5A12348FB6A6}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HelloWeb1", "HelloWeb1\HelloWeb1.csproj", "{D00B0263-B5B4-4C9E-8039-284F1EE8FAE8}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HelloWeb2", "HelloWeb2\HelloWeb2.csproj", "{7A14484F-C33B-4A75-8280-7A20B7C2FC8D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HelloWeb3", "HelloWeb3\HelloWeb3.csproj", "{D27A204D-5573-4F00-A792-FE96DE8CED6E}"
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{43EC73AC-F8B1-4F77-9627-C148704912CC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +53,22 @@ Global
 		{EBB77761-70F7-4409-AE37-5A12348FB6A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EBB77761-70F7-4409-AE37-5A12348FB6A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EBB77761-70F7-4409-AE37-5A12348FB6A6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D00B0263-B5B4-4C9E-8039-284F1EE8FAE8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D00B0263-B5B4-4C9E-8039-284F1EE8FAE8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D00B0263-B5B4-4C9E-8039-284F1EE8FAE8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D00B0263-B5B4-4C9E-8039-284F1EE8FAE8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7A14484F-C33B-4A75-8280-7A20B7C2FC8D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7A14484F-C33B-4A75-8280-7A20B7C2FC8D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7A14484F-C33B-4A75-8280-7A20B7C2FC8D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7A14484F-C33B-4A75-8280-7A20B7C2FC8D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D27A204D-5573-4F00-A792-FE96DE8CED6E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D27A204D-5573-4F00-A792-FE96DE8CED6E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D27A204D-5573-4F00-A792-FE96DE8CED6E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D27A204D-5573-4F00-A792-FE96DE8CED6E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{43EC73AC-F8B1-4F77-9627-C148704912CC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{43EC73AC-F8B1-4F77-9627-C148704912CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{43EC73AC-F8B1-4F77-9627-C148704912CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{43EC73AC-F8B1-4F77-9627-C148704912CC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace CURS.Domain.Interfaces.Data
 {
-    public interface IRepository<TEntity, TEntityViewDto> where TEntity : IEntity
+    public interface IRepository<TEntity, TEntityViewDto> where TEntity : IEntity where TEntityViewDto : IDto
     {
         Task CreateAsync(TEntity model);
         Task UpdateAsync(TEntity model);

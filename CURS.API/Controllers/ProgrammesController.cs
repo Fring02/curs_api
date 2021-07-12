@@ -48,7 +48,6 @@ namespace CURS.API.Controllers
             }
             catch
             {
-                throw;
                 res.Error++;
                 return StatusCode(500, res);
             }

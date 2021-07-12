@@ -1,0 +1,31 @@
+version: '3.4'
+
+services:
+  helloweb1:
+    image: fring02/hellowebapps:helloweb1
+    #image: ${DOCKER_REGISTRY-}helloweb1
+    ports:
+      - "4000:80"
+    #build:
+      #context: .
+      #dockerfile: HelloWeb1/Dockerfile
+
+  helloweb2:
+    image: fring02/hellowebapps:helloweb2
+    #image: ${DOCKER_REGISTRY-}helloweb2
+    ports:
+      - "4001:80"
+    #build:
+      #context: .
+      #dockerfile: HelloWeb2/Dockerfile
+
+
+  helloweb3:
+    image: fring02/hellowebapps:helloweb3
+    #image: ${DOCKER_REGISTRY-}helloweb3
+    ports:
+      - "4002:80"
+    #build:
+      #context: .
+      #dockerfile: HelloWeb3/Dockerfile
+

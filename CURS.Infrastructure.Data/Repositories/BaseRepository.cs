@@ -7,11 +7,12 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
+using MongoDB.Driver;
 
 namespace CURS.Infrastructure.Data.Repositories
 {
     public abstract class BaseRepository<TEntity, TEntityViewDto> : IRepository<TEntity, TEntityViewDto>
-        where TEntity : IEntity where  TEntityViewDto : IDto
+        where TEntity : IEntity where TEntityViewDto : IDto
     {
         protected readonly MongoContext _context;
         protected readonly IMapper _mapper;

@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "WMaJH15euh16HbY0QwKGc4tNTTFuqUiSl8t9D7kLmfn7kklgh/MeAgPxbNawuu1RRX2EpxGu9uFGuh7CsZcNMA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\ASUS\\source\\repos\\CURS\\HelloWeb2\\HelloWeb2.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\ASUS\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.10.14\\microsoft.visualstudio.azure.containers.tools.targets.1.10.14.nupkg.sha512"
+  ],
+  "logs": []
+}

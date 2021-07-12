@@ -20,8 +20,8 @@ namespace CURS.Infrastructure.Data.Utils
 
         public double FactsSum(double practiceFact, double labFact, double lectureFact, double srspFact,
             double studyPractice, double prodPractice, double pedPractice, double preDiplomaPractice, 
-            double researchPractice, double languagePractice, double diplomaWork, double dissertation, double gos,
-            double other)
+            double researchPractice, double languagePractice, double diplomaWork, double dissertation,
+            double gos, double other)
         {
             double res = 0;
             if (practiceFact == 0 && labFact == 0 && lectureFact == 0 && srspFact == 0)
