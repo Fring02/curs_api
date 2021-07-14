@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using AutoMapper.Internal;
 using CURS.Domain.Dtos;
@@ -23,13 +25,13 @@ namespace CURS.API.Controllers
         [HttpGet]
         public async Task<IActionResult> GetProgrammes()
         {
-            var res = new ProgrammesListDto();
+            ProgrammesListDto res;
             try
             {
-                var programmes = await _repos.GetAllAsync();
+                var programmes = await _repos.GetAllAsync(); 
+                res = new ProgrammesListDto(programmes.Count);
                 programmes.ForAll(g =>
                 {
-                    _calc.Value.Reset();
                     foreach (var s in g.Programmes)
                     {
                         s.ATT_RELATION = g.RelationKey;
@@ -40,7 +42,7 @@ namespace CURS.API.Controllers
                             s.ATT_RESEARCH_PRACTICE, s.ATT_LANGUAGE_PRACTICE, s.ATT_DIPLOMA_WORK, s.ATT_DISSERTATION,
                             s.ATT_GOS,
                             s.ATT_OTHER);
-                        res.PivotData.AddLast(new List<object>
+                        res.PivotData.Add(new List<object>
                         {
                             s.ID,
                             s.ATT_DISCIPLINE,
@@ -59,12 +61,13 @@ namespace CURS.API.Controllers
                             s.ATT_RELATION
                         });
                     }
+                    _calc.Value.Reset();
                 });
                 return Ok(res);
             }
             catch
             {
-                throw;
+                res = new ProgrammesListDto();
                 res.Error++;
                 return StatusCode(500, res);
             }

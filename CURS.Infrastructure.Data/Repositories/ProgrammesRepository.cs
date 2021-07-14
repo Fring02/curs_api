@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using AutoMapper;
+using AutoMapper.Internal;
 using AutoMapper.QueryableExtensions;
 using CURS.Domain.Core.Models;
 using CURS.Domain.Dtos;
@@ -24,7 +25,8 @@ namespace CURS.Infrastructure.Data.Repositories
         public override async Task<IReadOnlyCollection<GrouppedProgrammesViewDto>> GetAllAsync()
         {
             return await _context.Programmes.Aggregate()
-                .Group(s => s.ATT_RELATION, grouping => new GrouppedProgrammesViewDto()
+                .Group(s => s.ATT_RELATION, grouping =>
+                    new GrouppedProgrammesViewDto()
                 {
                     RelationKey = grouping.Key,
                     Programmes = grouping.Select(s => new ProgrammeViewDto
@@ -45,7 +47,7 @@ namespace CURS.Infrastructure.Data.Repositories
                         ATT_PROD_PRACTICE = s.ATT_PROD_PRACTICE,
                         ATT_PED_PRACTICE = s.ATT_PED_PRACTICE,
                         ATT_DIPLOMA_PRACTICE = s.ATT_DIPLOMA_PRACTICE,
-                       ATT_RESEARCH_PRACTICE = s.ATT_RESEARCH_PRACTICE,
+                        ATT_RESEARCH_PRACTICE = s.ATT_RESEARCH_PRACTICE,
                         ATT_LANGUAGE_PRACTICE = s.ATT_LANGUAGE_PRACTICE,
                         ATT_DIPLOMA_WORK = s.ATT_DIPLOMA_WORK,
                         ATT_DISSERTATION = s.ATT_DISSERTATION,
@@ -53,7 +55,6 @@ namespace CURS.Infrastructure.Data.Repositories
                         ATT_OTHER = s.ATT_OTHER,
                         ATT_COURSES = s.ATT_COURSES,
                         ATT_SUBGROUPS = s.ATT_SUBGROUPS,
-                        ATT_TOTAL = 0,
                         ATT_GROUP_CODE = s.ATT_GROUP_CODE,
                         ATT_CONNECTION_CODE = s.ATT_CONNECTION_CODE
                     })
