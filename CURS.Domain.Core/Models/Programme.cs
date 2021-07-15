@@ -4,7 +4,7 @@ namespace CURS.Domain.Core.Models
 {
     public class Programme : IEntity
     {
-        public int ID { get; set; }
+        public int? ID { get; set; }
         public string ATT_DISCIPLINE { get; set; }
         public string ATT_JOIN_GROUP { get; set; }
         public string ATT_GROUPS { get; set; }

@@ -35,6 +35,6 @@ namespace CURS.Domain.Dtos
         }
         public int Error { get; set; }
 
-        public List<List<object>> PivotData { get; set; }
+        public IEnumerable<List<object>> PivotData { get; set; }
     }
 }

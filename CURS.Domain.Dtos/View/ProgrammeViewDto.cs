@@ -4,7 +4,7 @@ namespace CURS.Domain.Dtos
 {
     public class ProgrammeViewDto : IDto
     {
-        public int ID { get; set; }
+        public int? ID { get; set; }
         public string ATT_DISCIPLINE { get; set; }
         public string ATT_GROUPS { get; set; }
         public string ATT_LANGUAGE_DEPARTMENTS { get; set; }

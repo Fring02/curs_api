@@ -16,10 +16,11 @@ namespace CURS.API.Controllers
     public class ProgrammesController : ControllerBase
     {
         private readonly IProgrammesRepository _repos;
-        private readonly Lazy<FactCalculator> _calc = new Lazy<FactCalculator>();
+        private FactCalculator calc;
         public ProgrammesController(IProgrammesRepository repos)
         {
             _repos = repos;
+            calc = new FactCalculator();
         }
 
         [HttpGet]
@@ -30,19 +31,20 @@ namespace CURS.API.Controllers
             {
                 var programmes = await _repos.GetAllAsync(); 
                 res = new ProgrammesListDto(programmes.Count);
+                var set = new SortedSet<List<object>>(new ProgrammesComparer());
                 programmes.ForAll(g =>
                 {
                     foreach (var s in g.Programmes)
                     {
                         s.ATT_RELATION = g.RelationKey;
-                        s.ATT_TOTAL = _calc.Value.FactsSum(s.ATT_PRACTICE_FACT, s.ATT_LABORATORY_FACT,
+                        s.ATT_TOTAL = calc.FactsSum(s.ATT_PRACTICE_FACT, s.ATT_LABORATORY_FACT,
                             s.ATT_LECTURE_FACT,
                             s.ATT_SRSP_FACT,
                             s.ATT_STUDY_PRACTICE, s.ATT_PROD_PRACTICE, s.ATT_PED_PRACTICE, s.ATT_DIPLOMA_PRACTICE,
                             s.ATT_RESEARCH_PRACTICE, s.ATT_LANGUAGE_PRACTICE, s.ATT_DIPLOMA_WORK, s.ATT_DISSERTATION,
                             s.ATT_GOS,
                             s.ATT_OTHER);
-                        res.PivotData.Add(new List<object>
+                        set.Add(new List<object>
                         {
                             s.ID,
                             s.ATT_DISCIPLINE,
@@ -51,26 +53,28 @@ namespace CURS.API.Controllers
                             s.ATT_LANGUAGE_DEPARTMENTS,
                             s.ATT_TOTAL_CREDITS,
                             s.ATT_COUNT_OF_STUDENTS,
-                            s.ATT_GROUPS,
+                            s.ATT_GROUPS.Split(" / ").Length,
                             s.ATT_SUBGROUPS,
                             s.ATT_TOTAL,
                             s.ATT_LESSON_TYPE,
                             "факт",
                             s.ATT_GROUP_CODE,
                             s.ATT_CONNECTION_CODE,
-                            s.ATT_RELATION
                         });
                     }
-                    _calc.Value.Reset();
+                    calc.Reset();
                 });
+                res.PivotData = set;
                 return Ok(res);
             }
             catch
             {
+                throw;
                 res = new ProgrammesListDto();
                 res.Error++;
                 return StatusCode(500, res);
             }
         }
+
     }
 }

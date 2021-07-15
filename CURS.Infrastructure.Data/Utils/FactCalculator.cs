@@ -1,21 +1,20 @@
-﻿using System.Collections.Concurrent;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 namespace CURS.Infrastructure.Data.Utils
 {
     public class FactCalculator
     {
-        private readonly IDictionary<double, bool> _lectureFactCounted;
-        private readonly IDictionary<double, bool> _practiceFactCounted;
-        private readonly IDictionary<double, bool> _laboratoryFactCounted;
-        private readonly IDictionary<double, bool> _srspFactCounted;
+        private readonly ISet<double> _lectureFactCounted;
+        private readonly ISet<double> _practiceFactCounted;
+        private readonly ISet<double> _laboratoryFactCounted;
+        private readonly ISet<double> _srspFactCounted;
 
         public FactCalculator()
         {
-            _lectureFactCounted = new Dictionary<double, bool>();
-            _practiceFactCounted = new Dictionary<double, bool>();
-            _laboratoryFactCounted = new Dictionary<double, bool>();
-            _srspFactCounted = new Dictionary<double, bool>();
+            _lectureFactCounted = new HashSet<double>();
+            _practiceFactCounted = new HashSet<double>();
+            _laboratoryFactCounted = new HashSet<double>();
+            _srspFactCounted = new HashSet<double>();
         }
 
         public void Reset()
@@ -38,25 +37,25 @@ namespace CURS.Infrastructure.Data.Utils
                        languagePractice
                        + diplomaWork + dissertation + gos + other;
             }
-            if (practiceFact > 0 && (!_practiceFactCounted.ContainsKey(practiceFact.Value) || !_practiceFactCounted[practiceFact.Value]))
+            if (practiceFact > 0 && !_practiceFactCounted.Contains(practiceFact.Value))
             {
                 res += practiceFact.Value;
-                _practiceFactCounted[practiceFact.Value] = true;
+                _practiceFactCounted.Add(practiceFact.Value);
             }
-            if (labFact > 0 && (!_laboratoryFactCounted.ContainsKey(labFact.Value) || !_laboratoryFactCounted[labFact.Value]))
+            if (labFact > 0 && !_laboratoryFactCounted.Contains(labFact.Value))
             {
                 res += labFact.Value;
-                _laboratoryFactCounted[labFact.Value] = true;
+                _laboratoryFactCounted.Add(labFact.Value);
             }
-            if (lectureFact > 0 && (!_lectureFactCounted.ContainsKey(lectureFact.Value) || !_lectureFactCounted[lectureFact.Value]))
+            if (lectureFact > 0 && !_lectureFactCounted.Contains(lectureFact.Value))
             {
                 res += lectureFact.Value;
-                _lectureFactCounted[lectureFact.Value] = true;
+                _lectureFactCounted.Add(lectureFact.Value);
             }
-            if (srspFact > 0 && (!_srspFactCounted.ContainsKey(srspFact.Value) || !_srspFactCounted[srspFact.Value]))
+            if (srspFact > 0 && !_srspFactCounted.Contains(srspFact.Value))
             {
                 res += srspFact.Value;
-                _srspFactCounted[srspFact.Value] = true;
+                _srspFactCounted.Add(srspFact.Value);
             }
             return res;
         }
