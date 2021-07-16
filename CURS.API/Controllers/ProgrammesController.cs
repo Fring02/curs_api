@@ -31,9 +31,11 @@ namespace CURS.API.Controllers
             {
                 var programmes = await _repos.GetAllAsync(); 
                 res = new ProgrammesListDto(programmes.Count);
-                var set = new SortedSet<List<object>>(new ProgrammesComparer());
+                var set = new List<List<object>>();
                 programmes.ForAll(g =>
                 {
+                    string id = g.Programmes.Take(g.Programmes.Count() - 1).Aggregate("[", (current, s) => current + $@"""{s.ID}"",");
+                    id += $@"""{g.Programmes.Last().ID}""]";
                     foreach (var s in g.Programmes)
                     {
                         s.ATT_RELATION = g.RelationKey;
@@ -46,7 +48,7 @@ namespace CURS.API.Controllers
                             s.ATT_OTHER);
                         set.Add(new List<object>
                         {
-                            s.ID,
+                            id,
                             s.ATT_DISCIPLINE,
                             s.ATT_SPECIALITIES,
                             s.ATT_COURSES,
