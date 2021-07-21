@@ -31,6 +31,7 @@ namespace CURS.API
             services.AddScoped<IQSExpertsRepository, QSExpertsRepository>();
             services.AddScoped<IQsExpertFieldsRepository, QsExpertFieldsRepository>();
             services.AddScoped<IProgrammesRepository, ProgrammesRepository>();
+            services.AddScoped<IAhdRepository, AhdRepository>();
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "CURS ArsuDev API", Version = "v1" });

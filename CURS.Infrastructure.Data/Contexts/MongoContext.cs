@@ -24,5 +24,14 @@ namespace CURS.Infrastructure.Data.Contexts
         internal IMongoCollection<BooleanDocument> Booleans => _db.GetCollection<BooleanDocument>("DirBoolean");
         internal IMongoCollection<QSDocument> QS => _db.GetCollection<QSDocument>("DirQS");
         internal IMongoCollection<ProgrammeDocument> Programmes => _db.GetCollection<ProgrammeDocument>("Programmes");
+
+        internal IMongoCollection<StudentDocument> Students => _db.GetCollection<StudentDocument>("Programmes");
+        internal IMongoCollection<ReferenceDocument> References => _db.GetCollection<ReferenceDocument>("References");
+        internal IMongoCollection<AhdRelationDocument> AhdRelations =>
+            _db.GetCollection<AhdRelationDocument>("AhdRelations");
+        internal IMongoCollection<AhdCubesInfoDocument> AhdCubesInfo =>
+            _db.GetCollection<AhdCubesInfoDocument>("AhdCubesInfo");
+        internal IMongoCollection<AhdCubeDataDocument> AhdCubeData =>
+            _db.GetCollection<AhdCubeDataDocument>("AhdCubeData");
     }
 }

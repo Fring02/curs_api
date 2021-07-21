@@ -1,0 +1,65 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using AutoMapper;
+using CURS.Domain.Core.Models;
+using CURS.Domain.Dtos;
+using CURS.Domain.Interfaces.Data;
+using CURS.Infrastructure.Data.Contexts;
+using CURS.Infrastructure.Data.Documents;
+using MongoDB.Bson;
+using MongoDB.Driver;
+
+namespace CURS.Infrastructure.Data.Repositories
+{
+    public class AhdRepository : IAhdRepository
+    {
+        private readonly MongoContext _context;
+        private readonly IMapper _mapper;
+        public AhdRepository(MongoContext context, IMapper mapper)
+        {
+            _context = context;
+            _mapper = mapper;
+        }
+
+        public async Task CalculateStudentsWithTranscript()
+        {
+            //Retrieve cube data for transcript 001E
+            var cubesInfo = await _context.AhdCubesInfo.Aggregate()
+                .Match(Builders<AhdCubesInfoDocument>.Filter.Eq(s => s.Filters.Code, "001E"))
+                .Lookup<ReferenceDocument, AhdCubesInfoDocument>("References",
+                    "Filters.Code", "Code", "Transcripts")
+                .Lookup<StudentDocument, AhdCubesInfoDocument>("Students",
+                    "Transcripts.User.ID", "User.ID", "Students")
+                .Project(Builders<AhdCubesInfoDocument>.Projection.Expression(s => new AhdCubeDataDocument
+                {
+                    Accumulation = s.Accumulation,
+                    Index = s.Index,
+                    PeriodType = s.PeriodType,
+                    DateOfCreation = DateTime.Now,
+                    DateEnd = DateTime.Now,
+                    DateModified = DateTime.Now,
+                    Id = ObjectId.GenerateNewId(),
+                    Items = s.Students.Select(st => new StudentFacultyViewDto<ObjectId>
+                    {
+                        Faculty = st.Faculty,
+                        User = st.User
+                    }).GroupBy(st => st.Faculty.ID,
+                        (key, students) => new AhdItem
+                        {
+                            Value = students.Count(),
+                            Pairs = new List<AhdItemPair>
+                            {
+                                new AhdItemPair
+                                {
+                                    Code = "001E",
+                                    Value = key.ToString()
+                                }
+                            }
+                        }),
+                })).ToListAsync();
+            await _context.AhdCubeData.InsertManyAsync(cubesInfo);
+        }
+    }
+}
