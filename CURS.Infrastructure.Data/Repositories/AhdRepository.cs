@@ -26,7 +26,11 @@ namespace CURS.Infrastructure.Data.Repositories
         public async Task CalculateStudentsWithTranscript()
         {
             //Retrieve cube data for transcript 001E
-            var cubesInfo = await _context.AhdCubesInfo.Aggregate()
+            var dateOfCreation = DateTime.Now;
+            var dateEnd = new DateTime(dateOfCreation.Year, dateOfCreation.Month, DateTime.DaysInMonth(
+                dateOfCreation.Year,
+                dateOfCreation.Month));
+            var cubeData = await _context.AhdCubesInfo.Aggregate()
                 .Match(Builders<AhdCubesInfoDocument>.Filter.Eq(s => s.Filters.Code, "001E"))
                 .Lookup<ReferenceDocument, AhdCubesInfoDocument>("References",
                     "Filters.Code", "Code", "Transcripts")
@@ -37,9 +41,9 @@ namespace CURS.Infrastructure.Data.Repositories
                     Accumulation = s.Accumulation,
                     Index = s.Index,
                     PeriodType = s.PeriodType,
-                    DateOfCreation = DateTime.Now,
-                    DateEnd = DateTime.Now,
-                    DateModified = DateTime.Now,
+                    DateOfCreation = dateOfCreation,
+                    DateEnd = dateEnd,
+                    DateModified = dateOfCreation,
                     Id = ObjectId.GenerateNewId(),
                     Items = s.Students.Select(st => new StudentFacultyViewDto<ObjectId>
                     {
@@ -53,13 +57,24 @@ namespace CURS.Infrastructure.Data.Repositories
                             {
                                 new AhdItemPair
                                 {
-                                    Code = "001E",
+                                    Code = "Faculty",
                                     Value = key.ToString()
                                 }
                             }
                         }),
                 })).ToListAsync();
-            await _context.AhdCubeData.InsertManyAsync(cubesInfo);
+            var indexes = new HashSet<int>();
+            var updateCubesTasks = new List<Task>();
+                foreach (var ad in cubeData.Where(ad => !indexes.Contains(ad.Index)))
+                {
+                    updateCubesTasks.Add(_context.AhdCubeData.UpdateManyAsync(Builders<AhdCubeDataDocument>
+                            .Filter.Eq("Index", ad.Index),
+                        Builders<AhdCubeDataDocument>.Update.Set(cube => cube.DateEnd, dateEnd)
+                            .Set(cube => cube.Items, ad.Items)));
+                    indexes.Add(ad.Index);
+                }
+            updateCubesTasks.Add(_context.AhdCubeData.InsertManyAsync(cubeData));
+            await Task.WhenAll(updateCubesTasks);
         }
     }
 }
