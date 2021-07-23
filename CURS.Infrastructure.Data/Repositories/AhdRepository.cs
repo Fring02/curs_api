@@ -69,7 +69,8 @@ namespace CURS.Infrastructure.Data.Repositories
                 {
                     updateCubesTasks.Add(_context.AhdCubeData.UpdateManyAsync(Builders<AhdCubeDataDocument>
                             .Filter.Eq("Index", ad.Index),
-                        Builders<AhdCubeDataDocument>.Update.Set(cube => cube.DateEnd, dateEnd)
+                        Builders<AhdCubeDataDocument>.Update
+                            .Set(cube => cube.DateModified, DateTime.Now)
                             .Set(cube => cube.Items, ad.Items)));
                     indexes.Add(ad.Index);
                 }
